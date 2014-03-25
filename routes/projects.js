@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/portfolio');
 */
 
 getAllProjects = function(req, res) {
-    projects.find(function(err, project) {
+    schemas.AppProject.find(function(err, project) {
         if (err) {
             console.log("ERROR: project list isn't displaying")
         }
@@ -22,28 +22,11 @@ getAllProjects = function(req, res) {
 };
 
 /*
-*  Show project
-*/
-
-getProject = function(req, res) {
-    projects.findOne({_id: req.params.id}, function(err, project) {
-        if (err) {
-            console.log("ERROR: unable to display project");
-        }
-
-        res.render('show', {
-            pageTitle: 'View Project',
-            project: project
-        });
-    });
-};
-
-/*
 *  Show edit project
 */
 
 editProject = function(req, res) {
-    projects.findOne({_id: req.params.id}, function(err, project) {
+    schemas.AppProject.findOne({_id: req.params.id}, function(err, project) {
         if (err) {
             console.log("ERROR: unable to display project to edit");
         }
@@ -60,14 +43,14 @@ editProject = function(req, res) {
 */
 
 updateProject = function(req, res) {
-    projects.findOne({_id: req.params.id}, function(err, project) {
+    schemas.AppProject.findOne({_id: req.params.id}, function(err, project) {
         if (err) {
             console.log("ERROR: unable to update project");
         }
 
         project.name = req.body.name;
         project.url = req.body.url;
-        project.imageURL = req.body.imageURL;
+        project.imgURL = req.body.imgURL;
         project.description = req.body.description;
 
         project.save(function(err) {
@@ -76,7 +59,7 @@ updateProject = function(req, res) {
             }
         });
 
-        res.redirect('/projects/'+req.params.id);
+        res.redirect('/projects');
         return;
     });
 };
@@ -86,7 +69,7 @@ updateProject = function(req, res) {
 */
 
 removeProject = function(req, res) {
-    projects.findByIdAndRemove(req.params.id, function(err) {
+    schemas.AppProject.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             console.log('ERROR: unable to remove project');
         }
@@ -110,10 +93,10 @@ showNewProject = function(req, res) {
 */
 
 createNewProject = function(req, res) {
-    var newProject = new projects({
+    var newProject = new schemas.AppProject({
         name: req.body.name,
         url: req.body.url,
-        imageURL: req.body.imageURL,
+        imgURL: req.body.imgURL,
         description: req.body.description
     });
 
@@ -123,7 +106,7 @@ createNewProject = function(req, res) {
         }
     });
 
-    res.send({redirect: '/projects/'+newProject._id});
+    res.redirect('/');
 };
 
 /*
@@ -133,7 +116,6 @@ createNewProject = function(req, res) {
 module.exports = function() {
     app.get('/', this.getAllProjects);
     app.get('/projects', this.getAllProjects);
-    app.get('/projects/:id', this.getProject);
     app.get('/projects/:id/edit', this.editProject);
     app.put('/projects/:id/edit', this.updateProject);
     app.delete('/projects/:id', this.removeProject);

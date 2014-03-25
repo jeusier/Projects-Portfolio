@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var newProjectSchema = new mongoose.Schema({
     name: String,
     url: String,
-    imageURL: String,
+    imgURL: String,
     description: String
 });
 

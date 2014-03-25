@@ -1,5 +1,16 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block append mainContent
+    div
+        div
+            h1 Jason Piros Portfolio
+        div
+            - each project in projects
+                div
+                    div
+                        h2
+                            a(href='/projects/#{project._id}/edit')= project.name
+                    div
+                        p= project.url
+                    div
+                        p= project.description

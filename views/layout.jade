@@ -1,7 +1,26 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title= pageTitle
+    link(rel="stylesheet", href="/stylesheets/styles.css")
+    link(rel="stylesheet", href="/stylesheets/normalize.css")
+    link(rel="stylesheet", href="/stylesheets/screen.css", media="screen, projection", type="text/css")
+    link(rel="stylesheet", href="/stylesheets/print.css", media="print", type="text/css")
+    script(src='/javascripts/modernizr.js')    
+    script(src='/javascripts/xhr.js')
   body
     block content
+        main.wrap.group
+            aside.sidebar
+                .my-info
+                    img(src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg", alt="Jason Piros" class="portfolio-image")
+                    h1 Jason Piros
+                    h2 Web Developer
+                        | Based in Honolulu, HI
+                    .social.group
+                        a.linkedin(href="#") LinkedIn
+                        a.github(href="#") Github
+                nav.menus
+            block mainContent
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='/javascripts/javascript.js')

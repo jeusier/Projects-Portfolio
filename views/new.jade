@@ -1,0 +1,18 @@
+extends layout
+block append mainContent
+  div
+    h1 Add Project
+    form(role="form" id='create' action='/projects' method='post')
+      div
+        label(for="name") Name: 
+        input(type="text" id="name" name="name" placeholder="Enter Project Name")
+      div
+        label(for="url") URL: 
+        input(type="text" id="url" name="url" placeholder="Enter Project URL")
+      div
+        label(for="imgURL") Image URL: 
+        input(type="text" id="imgURL" name="imgURL" placeholder="Enter Project Image URL")
+      div
+        label(for="description") Description: 
+        textarea(name="description" id="description" rows=20 placeholder="Enter Project Description")
+      button(type="submit") Add Project
