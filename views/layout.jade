@@ -10,17 +10,36 @@ html
     script(src='/javascripts/xhr.js')
   body
     block content
-        main.wrap.group
+        main.clearfix
             aside.sidebar
                 .my-info
                     img(src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg", alt="Jason Piros" class="portfolio-image")
                     h1 Jason Piros
                     h2 Web Developer
                         | Based in Honolulu, HI
-                    .social.group
-                        a.linkedin(href="#") LinkedIn
-                        a.github(href="#") Github
+                    .social.clearfix
+                        a.linkedin(href="http://linkedin.com" target="_blank") LinkedIn
+                        a.github(href="http://github.com" target="_blank") Github
                 nav.menus
+                    h3.work Work
+                    ul
+                        li
+                            a(href='/projects') Latest Projects
+                        li
+                            a(href='/projects/Personal') Personal Projects
+                        li
+                            a(href='/projects/Client') Client Projects
+                    h3.about About
+                    ul
+                        li
+                            a(href='/about/#skills') Skills
+                        li
+                            a(href='/about/#experience') Experience
+                        li
+                            a(href='/about/#education') Education
+                    h3.contact Contact
+                    ul
+                        li jason.piros@gmail.com
             block mainContent
         script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
         script(src='/javascripts/javascript.js')

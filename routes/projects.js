@@ -22,6 +22,23 @@ getAllProjects = function(req, res) {
 };
 
 /*
+*  Show all projects of type
+*/
+
+getTypeProjects = function(req, res) {
+    schemas.AppProject.find({type: req.params.type}, function(err, project) {
+        if (err) {
+            console.log("ERROR: project list isn't displaying")
+        }
+
+        res.render('type', {
+            pageTitle: 'Jason Piros - Project Portfolio',
+            projects: project,
+        });
+    });
+};
+
+/*
 *  Show edit project
 */
 
@@ -52,6 +69,7 @@ updateProject = function(req, res) {
         project.url = req.body.url;
         project.imgURL = req.body.imgURL;
         project.description = req.body.description;
+        project.type = req.body.type;
 
         project.save(function(err) {
             if (err) {
@@ -97,7 +115,8 @@ createNewProject = function(req, res) {
         name: req.body.name,
         url: req.body.url,
         imgURL: req.body.imgURL,
-        description: req.body.description
+        description: req.body.description,
+        type: req.body.type
     });
 
     newProject.save(function(err) {
@@ -116,6 +135,7 @@ createNewProject = function(req, res) {
 module.exports = function() {
     app.get('/', this.getAllProjects);
     app.get('/projects', this.getAllProjects);
+    app.get('/projects/:type', this.getTypeProjects);
     app.get('/projects/:id/edit', this.editProject);
     app.put('/projects/:id/edit', this.updateProject);
     app.delete('/projects/:id', this.removeProject);

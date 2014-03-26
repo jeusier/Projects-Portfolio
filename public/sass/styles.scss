@@ -1,30 +1,27 @@
 $black: #000;
-$white: #FFF;
-$grey: #f7f7f7;
+$white: #ede0ed;
+$grey: #bcb2bc;
 $darkgrey: #5e5e5e;
-$red: #d35136;
-$green: #27b599;
-$blue: #088ecc;
-$darkblue: #11171c;
+$purple: #441e9a;
+$pink: #960f90;
+$blue: #1b49c4;
+$darkpurple: #1F001F;
 
 $padding: 10px;
 $margin: 10px;
-$main-width: 1000px;
 
 $font-size: 14px;
 $font-family: 'Lato', sans-serif;
 $line-height: 1.4;
 
-$break-four: 1050px;
-$break-three: 760px;
-$break-two: 520px;
-$break-one: 360px;
+$large: 760px;
+$small: 360px;
 
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import url('normalize.css');
 
 //Utilities
-.group:after {
+.clearfix:after {
     content: "";
     display: table;
     clear: both;
@@ -41,7 +38,7 @@ $break-one: 360px;
 
 html,
 body,
-.wrap {
+main {
     min-height: 100%;
 }
 
@@ -50,7 +47,7 @@ body {
     font-size: $font-size;
     font-family: $font-family;
     line-height: $line-height;
-    background: $darkblue;
+    background: $darkpurple;
 }
 
 #create,
@@ -59,13 +56,25 @@ body {
     color: black;
 }
 
+label {
+    float: left;
+    text-align: right;
+    width: 30%;
+}
+
+input,
+textarea,
+select {
+    width: 70%;
+}
+
 .sidebar {
     width: 100%;
     height: 100%;
 
-    @media screen and (min-width: $break-three) {
+    @media screen and (min-width: $large) {
         float: left;
-        width: 20%
+        width: 27%
     }
 
     .my-info {
@@ -82,13 +91,279 @@ body {
             font-weight: normal;
         }
 
-        h1 {
-            font-size: 120%;
+        h1,
+        .name {
+            font-size: 150%;
         }
 
         h2 {
             font-size: 100%;
             white-space: pre;
         }
+
+        .social {
+            width: 60px;
+            margin: $margin auto;
+
+                a {
+                    float: left;
+                    width: 25px;
+                    height: 25px;
+                    margin: 0 $margin/5;
+                    background: url(../images/social-sprite.png) no-repeat;
+                    text-indent: -9999px;
+
+                    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+                        background: url(../images/social-sprite@2x.png) no-repeat;
+                        background-size: 51px 51px;
+                    }
+
+                    &.linkedin {
+                        background-position: -25px 0px;
+
+                        &:hover {
+                            background-position: -25px -25px;
+                        }
+                    }
+
+                    &.github {
+                        background-position: 0px 0px;
+
+                        &:hover {
+                            background-position: 0px -25px;
+                        }
+                    }
+                }
+        }
+    }
+
+    .menus {
+        text-align: center;
+
+        @media screen and (min-width: $large) {
+            padding: $padding*2 $padding*3;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-size: 120%;
+            font-weight: normal;
+            padding-left: $padding*2.5;
+            cursor: pointer;
+            width: 20%;
+            margin: $margin*2 $margin*11 $margin;
+
+            @media screen and (min-width: $small) {
+                text-align: center;
+                margin: $margin*2 auto $margin*2;
+            }
+
+            @media screen and (min-width: $large) {
+                margin: $margin*2 0 $margin 0;
+            }
+
+            &.work {
+                color: $purple;
+
+            }
+
+            &.about {
+                color: $pink;
+
+            }
+
+            &.contact {
+                color: $blue;
+
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: none;
+            margin: 0 $margin*13.5 $margin;
+            text-align: left;
+
+            @media screen and (min-width: $large) {
+                margin: 0 0 0 $margin*2.5;
+                display: block; 
+                width: auto;
+            }
+
+            &.open {
+                display: inline-block;
+                margin: 0 auto $margin $margin*6;
+
+                @media screen and (min-width: $large) {
+                    margin: 0 0 0 $margin*2.5;
+                    display: block;
+                    width: auto;
+                }
+            }
+
+            li {
+                a {
+                    color: $darkgrey;
+                    text-decoration: none;
+                    -webkit-transition: color 0.4s ease;
+                    -moz-transition: color 0.4s ease;
+                    -o-transition: color 0.4s ease;
+                    -ms-transition: color 0.4s ease;
+                    transition: color 0.4s ease;
+
+                    &:hover {
+                        color: $white;
+                        -webkit-transition: color 0.4s ease;
+                        -moz-transition: color 0.4s ease;
+                        -o-transition: color 0.4s ease;
+                        -ms-transition: color 0.4s ease;
+                        transition: color 0.4s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content {
+    width: 100%;
+    min-height: 100%;
+    background: $white;
+
+    @media screen and (min-width: $large) {
+        float: left;
+        width: 73%;
+    }
+
+    .portfolio-item {
+        background: $grey;
+
+        .portfolio-info {
+            min-height: 100%;
+            color: $darkgrey;
+            padding: $padding*2 $padding*2 $padding*2 $padding*4;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+
+            @media screen and (min-width: $large) {
+                float: left;
+                width: 36%
+            }
+
+            .name {
+                font-size: 150%;
+                color: $black;
+                margin-bottom: $margin;
+
+                a:link {
+                    color: $darkpurple;
+                    text-decoration: none;
+                }
+
+                a:visited {
+                    color: $purple;
+                    text-decoration: none;
+                }
+
+                a:hover {
+                    color: $pink;
+                    text-decoration: none;
+                }
+
+            }
+
+            .meta {
+                color: $black;
+                margin-top: $margin;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            .resume-category {
+                color: $black;
+                margin-bottom: $margin;
+                text-align: center;
+
+                .resume-section {
+                    font-size: 180%;
+                    font-weight: 700;
+                    font-style: italic;
+                    color: $darkpurple;
+                }
+            }
+        }
+
+        .portfolio-image {
+            padding: $padding*2;
+            background: $white;
+            border-left: 1px solid darken($grey, 10%);
+            text-align: center;
+
+
+            @media screen and (min-width: $large) {
+                float: left;
+                width: 64%;
+                border-bottom: 1px solid $darkgrey;
+            }
+
+            img {
+                width: 100%;
+                max-width: 610px;
+                height: auto;
+            }
+
+            .resume-body {
+                margin-bottom: $margin*2;
+                padding-bottom: $padding*2;
+
+                .resume-date {
+                    float: right;
+                    color: $darkpurple;
+                    text-transform: uppercase;
+                    margin: 0 0 $margin;
+                    padding: $padding/5 $padding;
+                }
+
+                .resume-header {
+                    color: $purple;
+                    font-size: 130%;
+                    font-weight: 400;
+                    letter-spacing: -1px;
+                    text-align: left;
+                }
+
+                .resume-subheader {
+                    color: $pink;
+                    font-size: 110%;
+                    font-weight: 400;
+                    font-style: italic;
+                    text-align: left;
+                }
+
+                .resume-description {
+                    color: $darkgrey;
+                    text-align: justify;
+                    padding: $padding*1.5 0;
+                }
+
+                .resume-list {
+                    list-style: inside;
+                    text-align: justify;
+                    padding: $padding*1.5 0;
+                    color: $darkgrey;
+
+                    li {
+                        list-style-type: disc;
+                    }
+                }
+
+            }
+        }
+
     }
 }

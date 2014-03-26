@@ -9,6 +9,7 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var projects = require('./routes/projects');
+var about = require('./routes/about');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(projects);
+app.use(about);
 
 // development only
 if ('development' == app.get('env')) {
