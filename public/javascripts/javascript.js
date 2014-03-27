@@ -25,6 +25,57 @@
     });
 
     /*
+    *  Listener to create new skill
+    */
+
+    $('#create-skill').on('submit', function(event) {
+        event.preventDefault();
+        $.ajax('/about/add-skill', {
+            type: 'POST',
+            data: $('#create-skill').serialize(),
+            success: function(data) {
+                if (typeof data.redirect == 'string') {
+                    window.location = data.redirect;
+                }
+            }
+        });
+    });
+
+    /*
+    *  Listener to create new experience
+    */
+
+    $('#create-experience').on('submit', function(event) {
+        event.preventDefault();
+        $.ajax('/about/add-experience', {
+            type: 'POST',
+            data: $('#create-experience').serialize(),
+            success: function(data) {
+                if (typeof data.redirect == 'string') {
+                    window.location = data.redirect;
+                }
+            }
+        });
+    });
+
+    /*
+    *  Listener to create new education
+    */
+
+    $('#create-education').on('submit', function(event) {
+        event.preventDefault();
+        $.ajax('/about/add-education', {
+            type: 'POST',
+            data: $('#create-education').serialize(),
+            success: function(data) {
+                if (typeof data.redirect == 'string') {
+                    window.location = data.redirect;
+                }
+            }
+        });
+    });
+
+    /*
     *  Listener to authenticate login
     */
 

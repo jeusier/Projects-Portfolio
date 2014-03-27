@@ -132,9 +132,10 @@ body {
 
             .logout, .add {
                 background-color: $grey;
-                width: 50%;
+                width: 160px;
                 text-align: center;
-                margin: $margin 25% $margin 25%;
+                margin: auto;
+                margin-top: 10px;
                 height: 25px;
                 line-height: $line-height;
                 border-radius: 10px;
@@ -467,7 +468,7 @@ body {
                     color: $darkpurple;
                     text-transform: uppercase;
                     margin: 0 0 $margin;
-                    padding: $padding/5 $padding;
+                    line-height: $line-height;
                 }
 
                 .resume-header {

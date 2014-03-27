@@ -1,0 +1,23 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Edit Project
+            figure.portfolio-image.clearfix
+                form(role="form" id='update-skill' action='/about/#{skill._id}/edit-skill' method='post')
+                    input(type='hidden', name='_method', value='put')
+                    div
+                        label(for="header") Skill Name 
+                        input(type="text" id="header" name="header" value="#{skill.header}")
+                    div
+                        label(for="date") Length of Knowledge 
+                        input(type="text" id="date" name="date" value="#{skill.date}")
+                    div
+                        label(for="description") Description 
+                        textarea(name="description" id="description" rows=15 value="#{skill.description}")= skill.description
+                    button(type="submit") Update Skill
+                form(role="form" id='delete-skill' action='/about/#{skill._id}/skill' method='post')
+                    input(type='hidden' name='_method' value='delete')
+                    button(type="submit") Delete Skill

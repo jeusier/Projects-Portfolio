@@ -122,26 +122,27 @@ body {
 /* line 133, ../sass/styles.scss */
 .sidebar .my-info a .logout, .sidebar .my-info a .add {
   background-color: #bc99bc;
-  width: 50%;
+  width: 160px;
   text-align: center;
-  margin: 10px 25% 10px 25%;
+  margin: auto;
+  margin-top: 10px;
   height: 25px;
   line-height: 1.4;
   border-radius: 10px;
   font-size: 110%;
   font-weight: 700;
 }
-/* line 148, ../sass/styles.scss */
+/* line 149, ../sass/styles.scss */
 .sidebar .menus {
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 148, ../sass/styles.scss */
+  /* line 149, ../sass/styles.scss */
   .sidebar .menus {
     padding: 20px 30px;
   }
 }
-/* line 155, ../sass/styles.scss */
+/* line 156, ../sass/styles.scss */
 .sidebar .menus h3 {
   text-transform: uppercase;
   font-size: 150%;
@@ -150,18 +151,18 @@ body {
   margin: 20px 110px 10px;
 }
 @media only screen and (min-width: 320px) {
-  /* line 155, ../sass/styles.scss */
+  /* line 156, ../sass/styles.scss */
   .sidebar .menus h3 {
     margin: 20px auto 20px;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 155, ../sass/styles.scss */
+  /* line 156, ../sass/styles.scss */
   .sidebar .menus h3 {
     margin: 20px 0 10px 0;
   }
 }
-/* line 171, ../sass/styles.scss */
+/* line 172, ../sass/styles.scss */
 .sidebar .menus h3 span.work:before {
   content: "";
   position: absolute;
@@ -174,7 +175,7 @@ body {
   border-bottom: 7px solid transparent;
   border-right: 0px;
 }
-/* line 186, ../sass/styles.scss */
+/* line 187, ../sass/styles.scss */
 .sidebar .menus h3 span.about:before {
   content: "";
   position: absolute;
@@ -187,7 +188,7 @@ body {
   border-bottom: 7px solid transparent;
   border-right: 0px;
 }
-/* line 201, ../sass/styles.scss */
+/* line 202, ../sass/styles.scss */
 .sidebar .menus h3 span.contact:before {
   content: "";
   position: absolute;
@@ -200,7 +201,7 @@ body {
   border-bottom: 7px solid transparent;
   border-right: 0px;
 }
-/* line 219, ../sass/styles.scss */
+/* line 220, ../sass/styles.scss */
 .sidebar .menus h3 span.contact.open:before,
 .sidebar .menus h3 span.about.open:before,
 .sidebar .menus h3 span.work.open:before {
@@ -210,26 +211,26 @@ body {
   border-bottom: 0px;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 231, ../sass/styles.scss */
+  /* line 232, ../sass/styles.scss */
   .sidebar .menus h3 span.contact,
   .sidebar .menus h3 span.about,
   .sidebar .menus h3 span.work {
     display: none;
   }
 }
-/* line 236, ../sass/styles.scss */
+/* line 237, ../sass/styles.scss */
 .sidebar .menus h3.work {
   color: #441e9a;
 }
-/* line 241, ../sass/styles.scss */
+/* line 242, ../sass/styles.scss */
 .sidebar .menus h3.about {
   color: #960f90;
 }
-/* line 246, ../sass/styles.scss */
+/* line 247, ../sass/styles.scss */
 .sidebar .menus h3.contact {
   color: #1b49c4;
 }
-/* line 252, ../sass/styles.scss */
+/* line 253, ../sass/styles.scss */
 .sidebar .menus ul {
   list-style: none;
   padding: 0;
@@ -239,26 +240,26 @@ body {
   line-height: 1.54;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 252, ../sass/styles.scss */
+  /* line 253, ../sass/styles.scss */
   .sidebar .menus ul {
     display: block;
     width: auto;
   }
 }
-/* line 265, ../sass/styles.scss */
+/* line 266, ../sass/styles.scss */
 .sidebar .menus ul.open {
   display: inline-block;
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 265, ../sass/styles.scss */
+  /* line 266, ../sass/styles.scss */
   .sidebar .menus ul.open {
     display: block;
     width: auto;
     text-align: center;
   }
 }
-/* line 277, ../sass/styles.scss */
+/* line 278, ../sass/styles.scss */
 .sidebar .menus ul li a {
   color: #5e445e;
   text-decoration: none;
@@ -268,7 +269,7 @@ body {
   -ms-transition: color 0.4s ease;
   transition: color 0.4s ease;
 }
-/* line 286, ../sass/styles.scss */
+/* line 287, ../sass/styles.scss */
 .sidebar .menus ul li a:hover {
   color: #edcced;
   -webkit-transition: color 0.4s ease;
@@ -278,20 +279,20 @@ body {
   transition: color 0.4s ease;
 }
 
-/* line 300, ../sass/styles.scss */
+/* line 301, ../sass/styles.scss */
 .content {
   width: 100%;
   min-height: 100%;
   background: #edcced;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 300, ../sass/styles.scss */
+  /* line 301, ../sass/styles.scss */
   .content {
     float: left;
     width: 73%;
   }
 }
-/* line 310, ../sass/styles.scss */
+/* line 311, ../sass/styles.scss */
 .content form {
   margin: auto;
   position: relative;
@@ -305,7 +306,7 @@ body {
   text-decoration: none;
   padding: 10px;
 }
-/* line 326, ../sass/styles.scss */
+/* line 327, ../sass/styles.scss */
 .content textarea,
 .content select,
 .content input {
@@ -313,17 +314,17 @@ body {
   font-style: normal;
   display: block;
 }
-/* line 332, ../sass/styles.scss */
+/* line 333, ../sass/styles.scss */
 .content label {
   float: left;
   text-align: left;
   width: 100%;
 }
-/* line 338, ../sass/styles.scss */
+/* line 339, ../sass/styles.scss */
 .content .portfolio-item {
   background: #bc99bc;
 }
-/* line 341, ../sass/styles.scss */
+/* line 342, ../sass/styles.scss */
 .content .portfolio-item:before {
   content: "";
   position: absolute;
@@ -333,7 +334,7 @@ body {
   left: 17px;
   bottom: 0px;
 }
-/* line 351, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info {
   min-height: 100%;
   color: #5e445e;
@@ -344,19 +345,19 @@ body {
   box-sizing: border-box;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 351, ../sass/styles.scss */
+  /* line 352, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info {
     float: left;
     width: 36%;
   }
 }
-/* line 365, ../sass/styles.scss */
+/* line 366, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name {
   font-size: 150%;
   color: black;
   margin-bottom: 10px;
 }
-/* line 370, ../sass/styles.scss */
+/* line 371, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name:before {
   content: "";
   position: absolute;
@@ -368,46 +369,46 @@ body {
   border-left: 24px solid #1f001f;
   border-bottom: 12px solid transparent;
 }
-/* line 382, ../sass/styles.scss */
+/* line 383, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:link {
   color: #1f001f;
   text-decoration: none;
 }
-/* line 387, ../sass/styles.scss */
+/* line 388, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:visited {
   color: #441e9a;
   text-decoration: none;
 }
-/* line 392, ../sass/styles.scss */
+/* line 393, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:hover {
   color: #960f90;
   text-decoration: none;
 }
-/* line 399, ../sass/styles.scss */
+/* line 400, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .description {
   text-align: left;
   font-size: 110%;
 }
-/* line 404, ../sass/styles.scss */
+/* line 405, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta {
   color: #1f001f;
   margin-top: 10px;
   font-size: 100%;
 }
-/* line 409, ../sass/styles.scss */
+/* line 410, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta p {
   margin: 0;
 }
-/* line 413, ../sass/styles.scss */
+/* line 414, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta span {
   font-weight: 700;
 }
-/* line 418, ../sass/styles.scss */
+/* line 419, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category {
   color: black;
   margin-bottom: 10px;
 }
-/* line 422, ../sass/styles.scss */
+/* line 423, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category:before {
   content: "";
   position: absolute;
@@ -419,14 +420,14 @@ body {
   border-left: 24px solid #1f001f;
   border-bottom: 12px solid transparent;
 }
-/* line 434, ../sass/styles.scss */
+/* line 435, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category .resume-section {
   font-size: 200%;
   font-weight: 700;
   font-style: italic;
   color: #1f001f;
 }
-/* line 443, ../sass/styles.scss */
+/* line 444, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image {
   padding: 20px;
   background: #edcced;
@@ -434,32 +435,32 @@ body {
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 443, ../sass/styles.scss */
+  /* line 444, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image {
     float: left;
     width: 64%;
   }
 }
-/* line 455, ../sass/styles.scss */
+/* line 456, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image img {
   width: 100%;
   max-width: 610px;
   height: auto;
 }
-/* line 461, ../sass/styles.scss */
+/* line 462, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body {
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
-/* line 465, ../sass/styles.scss */
+/* line 466, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-date {
   float: right;
   color: #1f001f;
   text-transform: uppercase;
   margin: 0 0 10px;
-  padding: 2px 10px;
+  line-height: 1.4;
 }
-/* line 473, ../sass/styles.scss */
+/* line 474, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-header {
   color: #441e9a;
   font-size: 130%;
@@ -467,7 +468,7 @@ body {
   letter-spacing: -1px;
   text-align: left;
 }
-/* line 481, ../sass/styles.scss */
+/* line 482, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-subheader {
   color: #960f90;
   font-size: 110%;
@@ -475,14 +476,14 @@ body {
   font-style: italic;
   text-align: left;
 }
-/* line 489, ../sass/styles.scss */
+/* line 490, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-description {
   color: #5e445e;
   text-align: justify;
   padding: 15px 0;
   font-size: 110%;
 }
-/* line 496, ../sass/styles.scss */
+/* line 497, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list {
   list-style: inside;
   text-align: left;
@@ -490,11 +491,11 @@ body {
   color: #5e445e;
   font-size: 110%;
 }
-/* line 503, ../sass/styles.scss */
+/* line 504, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list li {
   list-style-type: disc;
 }
-/* line 510, ../sass/styles.scss */
+/* line 511, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .error {
   background-color: #960f90;
   color: #1f001f;

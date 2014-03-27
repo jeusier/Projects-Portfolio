@@ -1,0 +1,31 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Add Experience
+            figure.portfolio-image.clearfix
+                form(role="form" id='create-experience' action='/about/add-experience' method='post')
+                    div
+                        label(for="header") Position Name 
+                        input(type="text" id="header" name="header" placeholder="Enter Position Name")
+                    div
+                        label(for="date") Range of Years
+                        input(type="text" id="date" name="date" placeholder="Enter Length, ie: JAN 2011 - JAN 2012")
+                    div
+                        label(for="subheader") Company, Status
+                        input(type="text" id="subheader" name="subheader" placeholder="Enter Company and Status, ie: Company, Full-Time")
+                    div
+                        label(for="list1") Description List 1
+                        input(type="text" id="list1" name="list1" placeholder="Enter 1st description")
+                    div
+                        label(for="list2") Description List 2
+                        input(type="text" id="list2" name="list2" placeholder="Enter 2nd description")
+                    div
+                        label(for="list3") Description List 3
+                        input(type="text" id="list3" name="list3" placeholder="Enter 3rd description")
+                    div
+                        label(for="list4") Description List 4
+                        input(type="text" id="list4" name="list4" placeholder="Enter 4th description")
+                    button(type="submit") Add Experience

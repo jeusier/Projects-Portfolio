@@ -25,7 +25,7 @@ authLogin = function(req, res) {
             req.session.admin = req.body.username;
             data = {
                 redirect: '/projects',
-                admin: req.session.admin,
+                admin: req.session.admin
             }
             res.send(data);
         } else {
