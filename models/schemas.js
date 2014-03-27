@@ -13,6 +13,13 @@ var newProjectSchema = new mongoose.Schema({
     type: String
 });
 
+var newAdminSchema = new mongoose.Schema({
+    username: String,
+    password: String
+});
+
 var projects = mongoose.model('projects', newProjectSchema);
+var admin = mongoose.model('admin', newAdminSchema);
 
 module.exports.AppProject = projects;
+module.exports.AppAdmin = admin;

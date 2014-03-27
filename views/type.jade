@@ -3,12 +3,20 @@ extends layout
 block mainContent
     div.content
         - each project in projects
-            article.portfolio-item.group.first
+            article.portfolio-item.clearfix
                 header.portfolio-info
                     div.name
-                        a(href='/projects/#{project._id}/edit')= project.name
+                        if admin === 'jcurray'
+                            a(href='/projects/#{project._id}/edit')= project.name
+                        else    
+                            h1= project.name
                     div.description= project.description
                     div.meta
-                        a(href='http://#{project.url}')= project.url
-                figure.portfolio-image.group
+                        p 
+                            span URL: 
+                            a(href='http://#{project.url}')= project.url
+                        P 
+                            span Type: 
+                            | #{project.type}
+                figure.portfolio-image.clearfix
                     img(src='#{project.imgURL}')

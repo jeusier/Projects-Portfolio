@@ -6,7 +6,10 @@ block mainContent
             article.portfolio-item.clearfix
                 header.portfolio-info
                     div.name
-                        a(href='/projects/#{project._id}/edit')= project.name
+                        if admin === 'jcurray'
+                            a(href='/projects/#{project._id}/edit')= project.name
+                        else
+                            h1= project.name
                     div.description= project.description
                     div.meta
                         p 

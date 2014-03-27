@@ -10,6 +10,7 @@ var http = require('http');
 var path = require('path');
 var projects = require('./routes/projects');
 var about = require('./routes/about');
+var login = require('./routes/login');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(projects);
 app.use(about);
+app.use(login);
 
 // development only
 if ('development' == app.get('env')) {

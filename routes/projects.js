@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost/portfolio');
 */
 
 getAllProjects = function(req, res) {
-    schemas.AppProject.find(function(err, project) {
+    schemas.AppProject.find().sort({_id: -1}).exec(function(err, project) {
         if (err) {
             console.log("ERROR: project list isn't displaying")
         }
@@ -17,6 +17,7 @@ getAllProjects = function(req, res) {
         res.render('index', {
             pageTitle: 'Jason Piros - Project Portfolio',
             projects: project,
+            admin: req.session.admin
         });
     });
 };
@@ -26,7 +27,7 @@ getAllProjects = function(req, res) {
 */
 
 getTypeProjects = function(req, res) {
-    schemas.AppProject.find({type: req.params.type}, function(err, project) {
+    schemas.AppProject.find({type: req.params.type}).sort({_id: -1}).exec(function(err, project) {
         if (err) {
             console.log("ERROR: project list isn't displaying")
         }
@@ -34,7 +35,23 @@ getTypeProjects = function(req, res) {
         res.render('type', {
             pageTitle: 'Jason Piros - Project Portfolio',
             projects: project,
+            admin: req.session.admin
         });
+    });
+};
+
+/*
+*  Show new project
+*/
+
+showNewProject = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/projects');
+    }
+
+    res.render('add', {
+        pageTitle: 'Create New Project',
+        admin: req.session.admin
     });
 };
 
@@ -43,6 +60,9 @@ getTypeProjects = function(req, res) {
 */
 
 editProject = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/projects');
+    }
     schemas.AppProject.findOne({_id: req.params.id}, function(err, project) {
         if (err) {
             console.log("ERROR: unable to display project to edit");
@@ -50,7 +70,8 @@ editProject = function(req, res) {
 
         res.render('edit', {
             pageTitle: 'Edit Project',
-            project: project
+            project: project,
+            admin: req.session.admin
         });
     });
 };
@@ -60,6 +81,9 @@ editProject = function(req, res) {
 */
 
 updateProject = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/projects');
+    }
     schemas.AppProject.findOne({_id: req.params.id}, function(err, project) {
         if (err) {
             console.log("ERROR: unable to update project");
@@ -87,6 +111,9 @@ updateProject = function(req, res) {
 */
 
 removeProject = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/projects');
+    }
     schemas.AppProject.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             console.log('ERROR: unable to remove project');
@@ -97,20 +124,13 @@ removeProject = function(req, res) {
 };
 
 /*
-*  Show new project
-*/
-
-showNewProject = function(req, res) {
-    res.render('new', {
-        pageTitle: 'Create New Project',
-    });
-};
-
-/*
 *  Create new project
 */
 
 createNewProject = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/projects');
+    }
     var newProject = new schemas.AppProject({
         name: req.body.name,
         url: req.body.url,
@@ -125,7 +145,7 @@ createNewProject = function(req, res) {
         }
     });
 
-    res.redirect('/');
+    res.send({redirect: '/projects'});
 };
 
 /*
@@ -135,11 +155,11 @@ createNewProject = function(req, res) {
 module.exports = function() {
     app.get('/', this.getAllProjects);
     app.get('/projects', this.getAllProjects);
+    app.get('/projects/add', this.showNewProject);
     app.get('/projects/:type', this.getTypeProjects);
     app.get('/projects/:id/edit', this.editProject);
     app.put('/projects/:id/edit', this.updateProject);
     app.delete('/projects/:id', this.removeProject);
-    app.get('/projects/new', this.showNewProject);
     app.post('/projects', this.createNewProject);
     
 

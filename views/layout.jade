@@ -7,21 +7,26 @@ html
     link(rel="stylesheet", href="/stylesheets/screen.css", media="screen, projection", type="text/css")
     link(rel="stylesheet", href="/stylesheets/print.css", media="print", type="text/css")
     script(src='/javascripts/modernizr.js')    
-    script(src='/javascripts/xhr.js')
   body
     block content
         main.clearfix
             aside.sidebar
                 .my-info
-                    img(src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg", alt="Jason Piros" class="portfolio-image")
+                    img.portfolio-image(src="http://placekitten.com.s3.amazonaws.com/homepage-samples/200/286.jpg", alt="Jason Piros")
                     h1 Jason Piros
                     h2 Web Developer
                         | Based in Honolulu, HI
                     .social.clearfix
                         a.linkedin(href="http://linkedin.com" target="_blank") LinkedIn
                         a.github(href="http://github.com" target="_blank") Github
+                    if admin === 'jcurray'
+                        a(href='/logout')
+                            div.logout Logout
+                        a(href='/projects/add')
+                            div.add Add Project
                 nav.menus
                     h3.work Work
+                        span.work
                     ul
                         li
                             a(href='/projects') Latest Projects
@@ -30,6 +35,7 @@ html
                         li
                             a(href='/projects/Client') Client Projects
                     h3.about About
+                        span.about
                     ul
                         li
                             a(href='/about/#skills') Skills
@@ -38,6 +44,7 @@ html
                         li
                             a(href='/about/#education') Education
                     h3.contact Contact
+                        span.contact
                     ul
                         li jason.piros@gmail.com
             block mainContent

@@ -2,28 +2,37 @@ extends layout
 
 block mainContent
     div.content
-        article.portfolio-item.group.first
+        article.portfolio-item.clearfix
             header.portfolio-info
+                div.name Edit Project
+            figure.portfolio-image.clearfix
                 form(role="form" id='update' action='/projects/#{project._id}/edit' method='post')
                     input(type='hidden', name='_method', value='put')
                     div
-                        label(for="name") Name: 
+                        label(for="name") Name 
                         input(type="text" id="name" name="name" value='#{project.name}')
                     div
-                        label(for="url") URL: 
+                        label(for="url") URL 
                         input(type="text" id="url" name="url" value='#{project.url}')
                     div
-                        label(for="imgURL") Image URL: 
+                        label(for="imgURL") Image URL 
                         input(type="text" id="imgURL" name="imgURL" value='#{project.imgURL}')
                     div
-                        label(for="description") Description: 
+                        label(for="description") Description 
                         textarea(name="description" id="description" rows=15 value='#{project.description}')= project.description
                     div
-                        label(for="type") Type: 
-                        input(type="text" id="type" name="type" value='#{project.type}')
-                    button(type="submit") Update Project
+                        label(for="type") Type
+                        select(name="type" id="type")
+                            if project.type === "Client" 
+                                option(value="Client" selected) Client
+                                option(value="Personal") Personal
+                            else if project.type === "Personal"
+                                option(value="Client") Client
+                                option(value="Personal" selected) Personal
+                            else
+                                option(value="Client") Client
+                                option(value="Personal") Personal
+                    button(type="submit") Update Project 
                 form(role="form" id='delete' action='/projects/#{project._id}' method='post')
                     input(type='hidden' name='_method' value='delete')
                     button(type="submit") Delete Project
-            figure.portfolio-image.group
-                img(src='#{project.imgURL}')

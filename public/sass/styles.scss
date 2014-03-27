@@ -1,7 +1,7 @@
 $black: #000;
-$white: #ede0ed;
-$grey: #bcb2bc;
-$darkgrey: #5e5e5e;
+$white: #edcced;
+$grey: #bc99bc;
+$darkgrey: #5e445e;
 $purple: #441e9a;
 $pink: #960f90;
 $blue: #1b49c4;
@@ -14,8 +14,8 @@ $font-size: 14px;
 $font-family: 'Lato', sans-serif;
 $line-height: 1.4;
 
-$large: 760px;
-$small: 360px;
+$large: 1000px;
+$small: 320px;
 
 @import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import url('normalize.css');
@@ -40,6 +40,7 @@ html,
 body,
 main {
     min-height: 100%;
+    width: 100%;
 }
 
 body {
@@ -53,26 +54,15 @@ body {
 #create,
 #update,
 #delete {
-    color: black;
+    color: $darkpurple;
 }
 
-label {
-    float: left;
-    text-align: right;
-    width: 30%;
-}
-
-input,
-textarea,
-select {
-    width: 70%;
-}
 
 .sidebar {
     width: 100%;
     height: 100%;
 
-    @media screen and (min-width: $large) {
+    @media only screen and (min-width: $large) {
         float: left;
         width: 27%
     }
@@ -83,7 +73,7 @@ select {
         border-bottom: 1px solid $darkgrey;
 
         .portfolio-image {
-            border-radius: 50%
+            border-radius: 50%;
         }
 
         h1,
@@ -93,12 +83,13 @@ select {
 
         h1,
         .name {
-            font-size: 150%;
+            font-size: 200%;
         }
 
         h2 {
-            font-size: 100%;
+            font-size: 110%;
             white-space: pre;
+            font-style: italic;
         }
 
         .social {
@@ -135,31 +126,111 @@ select {
                     }
                 }
         }
+
+        a {
+            text-decoration: none;
+
+            .logout, .add {
+                background-color: $grey;
+                width: 50%;
+                text-align: center;
+                margin: $margin 25% $margin 25%;
+                height: 25px;
+                line-height: $line-height;
+                border-radius: 10px;
+                font-size: 110%;
+                font-weight: 700;
+            }
+        }
+
     }
 
     .menus {
         text-align: center;
 
-        @media screen and (min-width: $large) {
+        @media only screen and (min-width: $large) {
             padding: $padding*2 $padding*3;
         }
 
         h3 {
             text-transform: uppercase;
-            font-size: 120%;
+            font-size: 150%;
             font-weight: normal;
-            padding-left: $padding*2.5;
             cursor: pointer;
-            width: 20%;
             margin: $margin*2 $margin*11 $margin;
 
-            @media screen and (min-width: $small) {
-                text-align: center;
+            @media only screen and (min-width: $small) {
                 margin: $margin*2 auto $margin*2;
             }
 
-            @media screen and (min-width: $large) {
+            @media only screen and (min-width: $large) {
                 margin: $margin*2 0 $margin 0;
+            }
+
+            span.work {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -125px;
+                    top: 7px;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 7px solid transparent;
+                    border-left: 14px solid $grey;
+                    border-bottom: 7px solid transparent;
+                    border-right: 0px;
+                }
+            }
+
+            span.about {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -129px;
+                    top: 7px;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 7px solid transparent;
+                    border-left: 14px solid $grey;
+                    border-bottom: 7px solid transparent;
+                    border-right: 0px;
+                }
+            }
+
+            span.contact {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -145px;
+                    top: 7px;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 7px solid transparent;
+                    border-left: 14px solid $grey;
+                    border-bottom: 7px solid transparent;
+                    border-right: 0px;
+                }
+            }
+
+            span.contact,
+            span.about,
+            span.work {
+                &.open {
+                    &:before {
+                      border-left: 7px solid transparent;
+                      border-top: 14px solid $grey;
+                      border-right: 7px solid transparent;
+                      border-bottom: 0px;
+                    }
+                }
+            }
+
+            @media only screen and (min-width: $large) {
+                span.contact,
+                span.about,
+                span.work {
+                  display: none;
+                }
             }
 
             &.work {
@@ -182,23 +253,23 @@ select {
             list-style: none;
             padding: 0;
             display: none;
-            margin: 0 $margin*13.5 $margin;
-            text-align: left;
+            text-align: center;
+            font-size: 110%;
+            line-height: $line-height*1.1;
 
-            @media screen and (min-width: $large) {
-                margin: 0 0 0 $margin*2.5;
+            @media only screen and (min-width: $large) {
                 display: block; 
                 width: auto;
             }
 
             &.open {
                 display: inline-block;
-                margin: 0 auto $margin $margin*6;
+                text-align: center;
 
-                @media screen and (min-width: $large) {
-                    margin: 0 0 0 $margin*2.5;
+                @media only screen and (min-width: $large) {
                     display: block;
                     width: auto;
+                    text-align: center;
                 }
             }
 
@@ -231,13 +302,51 @@ select {
     min-height: 100%;
     background: $white;
 
-    @media screen and (min-width: $large) {
+    @media only screen and (min-width: $large) {
         float: left;
         width: 73%;
     }
 
+    form {
+        margin: auto;
+        position: relative;
+        width:100%;
+        height:100%;
+        font-style: italic;
+        font-size: $font-size*1.5;
+        line-height: $line-height*1.1;
+        font-weight: bold;
+        color: $darkpurple;
+        text-decoration: none;
+        padding:10px;
+    }
+
+    textarea,
+    select,
+    input   {
+        width: 100%;
+        font-style: normal;
+        display: block;
+    }
+
+    label {
+        float: left;
+        text-align: left;
+        width: 100%;
+    }
+
     .portfolio-item {
         background: $grey;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            background: darken($grey, 10%);
+            top: 0px;
+            left: 17px;
+            bottom: 0px;
+        }
 
         .portfolio-info {
             min-height: 100%;
@@ -248,7 +357,7 @@ select {
             -ms-box-sizing: border-box;
             box-sizing: border-box;
 
-            @media screen and (min-width: $large) {
+            @media only screen and (min-width: $large) {
                 float: left;
                 width: 36%
             }
@@ -257,6 +366,18 @@ select {
                 font-size: 150%;
                 color: $black;
                 margin-bottom: $margin;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -29px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 12px solid transparent;
+                    border-left: 24px solid $darkpurple;
+                    border-bottom: 12px solid transparent;
+                }
 
                 a:link {
                     color: $darkpurple;
@@ -275,22 +396,43 @@ select {
 
             }
 
+            .description {
+                text-align: left;
+                font-size: 110%;
+            }
+
             .meta {
-                color: $black;
+                color: $darkpurple;
                 margin-top: $margin;
+                font-size: 100%;
 
                 p {
                     margin: 0;
+                }
+
+                span {
+                    font-weight: 700;
                 }
             }
 
             .resume-category {
                 color: $black;
                 margin-bottom: $margin;
-                text-align: center;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -29px;
+                    top: 3px;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 12px solid transparent;
+                    border-left: 24px solid $darkpurple;
+                    border-bottom: 12px solid transparent;
+                }
 
                 .resume-section {
-                    font-size: 180%;
+                    font-size: 200%;
                     font-weight: 700;
                     font-style: italic;
                     color: $darkpurple;
@@ -305,10 +447,9 @@ select {
             text-align: center;
 
 
-            @media screen and (min-width: $large) {
+            @media only screen and (min-width: $large) {
                 float: left;
                 width: 64%;
-                border-bottom: 1px solid $darkgrey;
             }
 
             img {
@@ -349,19 +490,26 @@ select {
                     color: $darkgrey;
                     text-align: justify;
                     padding: $padding*1.5 0;
+                    font-size: 110%;
                 }
 
                 .resume-list {
                     list-style: inside;
-                    text-align: justify;
+                    text-align: left;
                     padding: $padding*1.5 0;
                     color: $darkgrey;
+                    font-size: 110%;
 
                     li {
                         list-style-type: disc;
                     }
                 }
 
+            }
+
+            .error {
+                background-color: $pink;
+                color: $darkpurple;
             }
         }
 

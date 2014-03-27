@@ -1,0 +1,17 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Admin Login
+            figure.portfolio-image.clearfix
+                form(role="form" id='login' action='/login' method='post')
+                    div
+                        label(for="username") Username 
+                        input(type="text" id="username" name="username" placeholder="Enter Username")
+                    div
+                        label(for="password") Password 
+                        input(type="password" id="password" name="password" placeholder="Enter Password")
+                    button(type="submit") Login
+                div#error
