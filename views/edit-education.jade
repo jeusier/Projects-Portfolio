@@ -1,0 +1,23 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Edit Education
+            figure.portfolio-image.clearfix
+                form(role="form" id='update-education' action='/about/#{education._id}/edit-education' method='post')
+                    input(type='hidden', name='_method', value='put')
+                    div
+                        label(for="header") School Name 
+                        input(type="text" id="header" name="header" value="#{education.header}")
+                    div
+                        label(for="subheader") Degree or School Type 
+                        input(type="text" id="subheader" name="subheader" value="#{education.subheader}")
+                    div
+                        label(for="description") Description 
+                        textarea(name="description" id="description" rows=15 value="#{education.description}")= education.description
+                    button(type="submit") Update Education
+                form(role="form" id='delete-education' action='/about/#{education._id}/education' method='post')
+                    input(type='hidden' name='_method' value='delete')
+                    button(type="submit") Delete Education

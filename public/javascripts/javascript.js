@@ -35,11 +35,13 @@
             data: $('#create-skill').serialize(),
             success: function(data) {
                 if (typeof data.redirect == 'string') {
+                    console.log("hello");
                     window.location = data.redirect;
                 }
             }
         });
     });
+
 
     /*
     *  Listener to create new experience

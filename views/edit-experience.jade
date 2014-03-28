@@ -1,0 +1,35 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Edit Experience
+            figure.portfolio-image.clearfix
+                form(role="form" id='update-experience' action='/about/#{experience._id}/edit-experience' method='post')
+                    input(type='hidden', name='_method', value='put')
+                    div
+                        label(for="header") Position Name 
+                        input(type="text" id="header" name="header" value="#{experience.header}")
+                    div
+                        label(for="date") Range of Years
+                        input(type="text" id="date" name="date" value="#{experience.date}")
+                    div
+                        label(for="subheader") Company, Status
+                        input(type="text" id="subheader" name="subheader" value="#{experience.subheader}")
+                    div
+                        label(for="list1") Description List 1
+                        input(type="text" id="list1" name="list1" value="#{experience.list1}")
+                    div
+                        label(for="list2") Description List 2
+                        input(type="text" id="list2" name="list2" value="#{experience.list2}")
+                    div
+                        label(for="list3") Description List 3
+                        input(type="text" id="list3" name="list3" value="#{experience.list3}")
+                    div
+                        label(for="list4") Description List 4
+                        input(type="text" id="list4" name="list4" value="#{experience.list4}")
+                    button(type="submit") Update Experience
+                form(role="form" id='delete-experience' action='/about/#{experience._id}/experience' method='post')
+                    input(type='hidden' name='_method' value='delete')
+                    button(type="submit") Delete Experience

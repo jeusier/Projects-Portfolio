@@ -21,9 +21,15 @@ html
                         a.github(href="http://github.com" target="_blank") Github
                     if admin === 'jcurray'
                         a(href='/logout')
-                            div.logout Logout
+                            div.admin-buttons Logout
                         a(href='/projects/add')
-                            div.add Add Project
+                            div.admin-buttons Add Project
+                        a(href='/about/add-skill')
+                            div.admin-buttons Add Skill
+                        a(href='/about/add-experience')
+                            div.admin-buttons Add Experience
+                        a(href='/about/add-education')
+                            div.admin-buttons Add Education
                 nav.menus
                     h3.work Work
                         span.work

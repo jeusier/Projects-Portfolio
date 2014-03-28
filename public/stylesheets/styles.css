@@ -120,7 +120,7 @@ body {
   text-decoration: none;
 }
 /* line 133, ../sass/styles.scss */
-.sidebar .my-info a .logout, .sidebar .my-info a .add {
+.sidebar .my-info a .admin-buttons {
   background-color: #bc99bc;
   width: 160px;
   text-align: center;
@@ -299,7 +299,7 @@ body {
   width: 100%;
   height: 100%;
   font-style: italic;
-  font-size: 21px;
+  font-size: 18.2px;
   line-height: 1.54;
   font-weight: bold;
   color: #1f001f;
@@ -479,7 +479,7 @@ body {
 /* line 490, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-description {
   color: #5e445e;
-  text-align: justify;
+  text-align: left;
   padding: 15px 0;
   font-size: 110%;
 }

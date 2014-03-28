@@ -105,7 +105,7 @@ showNewEducation = function(req, res) {
 
 editSkill = function(req, res) {
     if (req.session.admin !== 'jcurray') {
-        res.redirect('/projects');
+        res.redirect('/about');
     }
     schemas.AppSkill.findOne({_id: req.params.id}, function(err, skill) {
         if (err) {
@@ -126,7 +126,7 @@ editSkill = function(req, res) {
 
 updateSkill = function(req, res) {
     if (req.session.admin !== 'jcurray') {
-        res.redirect('/projects');
+        res.redirect('/about');
     }
     schemas.AppSkill.findOne({_id: req.params.id}, function(err, skill) {
         if (err) {
@@ -138,6 +138,107 @@ updateSkill = function(req, res) {
         skill.description = req.body.description;
 
         skill.save(function(err) {
+            if (err) {
+                console.log("ERROR: unable to save skill");
+            }
+        });
+
+        res.redirect('/about');
+        return;
+    });
+};
+
+/*
+*  Show edit experience
+*/
+
+editExperience = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/about');
+    }
+    schemas.AppExperience.findOne({_id: req.params.id}, function(err, experience) {
+        if (err) {
+            console.log("ERROR: unable to display experience to edit");
+        }
+
+        res.render('edit-experience', {
+            pageTitle: 'Edit Experience',
+            experience: experience,
+            admin: req.session.admin
+        });
+    });
+};
+
+/*
+*  Update experience
+*/
+
+updateExperience = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/about');
+    }
+    schemas.AppExperience.findOne({_id: req.params.id}, function(err, experience) {
+        if (err) {
+            console.log("ERROR: unable to update experience");
+        }
+
+        experience.header = req.body.header;
+        experience.date = req.body.date;
+        experience.list1 = req.body.list1;
+        experience.list2 = req.body.list2;
+        experience.list3 = req.body.list3;
+        experience.list4 = req.body.list4;
+
+        experience.save(function(err) {
+            if (err) {
+                console.log("ERROR: unable to save experience");
+            }
+        });
+
+        res.redirect('/about');
+        return;
+    });
+};
+
+/*
+*  Show edit education
+*/
+
+editEducation = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/about');
+    }
+    schemas.AppEducation.findOne({_id: req.params.id}, function(err, education) {
+        if (err) {
+            console.log("ERROR: unable to display education to edit");
+        }
+
+        res.render('edit-education', {
+            pageTitle: 'Edit Education',
+            education: education,
+            admin: req.session.admin
+        });
+    });
+};
+
+/*
+*  Update education
+*/
+
+updateEducation = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/about');
+    }
+    schemas.AppEducation.findOne({_id: req.params.id}, function(err, education) {
+        if (err) {
+            console.log("ERROR: unable to update project");
+        }
+
+        education.header = req.body.header;
+        education.subheader = req.body.subheader;
+        education.description = req.body.description;
+
+        education.save(function(err) {
             if (err) {
                 console.log("ERROR: unable to save skill");
             }
@@ -168,7 +269,7 @@ createNewSkill = function(req, res) {
         }
     });
 
-    res.redirect('/about');
+    res.send({redirect: '/about'});
 };
 
 /*
@@ -195,7 +296,7 @@ createNewExperience = function(req, res) {
         }
     });
 
-    res.redirect('/about');
+    res.send({redirect: '/about'});
 };
 
 /*
@@ -218,7 +319,7 @@ createNewEducation = function(req, res) {
         }
     });
 
-    res.redirect('/about');
+    res.send({redirect: '/about'});
 };
 
 /*
@@ -227,9 +328,43 @@ createNewEducation = function(req, res) {
 
 removeSkill = function(req, res) {
     if (req.session.admin !== 'jcurray') {
-        res.redirect('/projects');
+        res.redirect('/about');
     }
     schemas.AppSkill.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            console.log('ERROR: unable to remove skill');
+        }
+    });
+
+    res.redirect('/about');
+};
+
+/*
+*  Remove experience
+*/
+
+removeExperience = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/about');
+    }
+    schemas.AppExperience.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            console.log('ERROR: unable to remove skill');
+        }
+    });
+
+    res.redirect('/about');
+};
+
+/*
+*  Remove education
+*/
+
+removeEducation = function(req, res) {
+    if (req.session.admin !== 'jcurray') {
+        res.redirect('/about');
+    }
+    schemas.AppEducation.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             console.log('ERROR: unable to remove skill');
         }
@@ -251,10 +386,16 @@ module.exports = function() {
     app.get('/about/:section', this.getAboutSection);
     app.get('/about/:id/edit-skill', this.editSkill);
     app.put('/about/:id/edit-skill', this.updateSkill);
+    app.get('/about/:id/edit-experience', this.editExperience);
+    app.put('/about/:id/edit-experience', this.updateExperience);
+    app.get('/about/:id/edit-education', this.editEducation);
+    app.put('/about/:id/edit-education', this.updateEducation);
     app.post('/about/add-skill', this.createNewSkill);
     app.post('/about/add-experience', this.createNewExperience);
     app.post('/about/add-education', this.createNewEducation);
     app.delete('/about/:id/skill', this.removeSkill);
+    app.delete('/about/:id/experience', this.removeExperience);
+    app.delete('/about/:id/education', this.removeEducation);
 
     return app;
 }();

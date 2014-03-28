@@ -10,7 +10,10 @@ block mainContent
                 - each skill in skills
                     div.resume-body
                         h2.resume-date= skill.date
-                        a(href="/about/#{skill._id}/edit-skill")
+                        if admin === 'jcurray'
+                            a(href="/about/#{skill._id}/edit-skill")
+                                h1.resume-header= skill.header
+                        else
                             h1.resume-header= skill.header
                         h2.resume-subheader
                         p.resume-description= skill.description
@@ -21,7 +24,11 @@ block mainContent
                 - each experience in experiences
                     div.resume-body
                         h2.resume-date= experience.date
-                        h1.resume-header= experience.header
+                        if admin === 'jcurray'
+                            a(href="/about/#{experience._id}/edit-experience")
+                                h1.resume-header= experience.header
+                        else
+                            h1.resume-header= experience.header
                         h2.resume-subheader= experience.subheader
                         ul.resume-list
                             li= experience.list1
@@ -35,6 +42,10 @@ block mainContent
                 - each education in educations
                     div.resume-body
                         h2.resume-date 
-                        h1.resume-header= education.header
+                        if admin === 'jcurray'
+                            a(href="/about/#{education._id}/edit-education")
+                                h1.resume-header= education.header
+                        else
+                            h1.resume-header= education.header
                         h2.resume-subheader= education.subheader
                         p.resume-description= education.description
