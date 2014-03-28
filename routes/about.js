@@ -8,21 +8,26 @@ var schemas = require('../models/schemas');
 */
 
 getAbout = function(req, res) {
+
+    //display skills in descending order (latest first)
     schemas.AppSkill.find().sort({_id: -1}).exec(function(err, skill) {
         if (err) {
             console.log("ERROR: skill list isn't displaying")
         }
 
+        //display experience in descending order (latest first)
         schemas.AppExperience.find().sort({_id: -1}).exec(function(err, experience) {
             if (err) {
                 console.log("ERROR: experience list isn't displaying")
             }
 
+            //display education in descending order (latest first)
             schemas.AppEducation.find().sort({_id: -1}).exec(function(err, education) {
                 if (err) {
                     console.log("ERROR: education list isn't displaying")
                 }
 
+                //display about page with skills, experience, education, and sesion
                 res.render('about', {
                     pageTitle: 'Jason Piros - CV',
                     skills: skill,
@@ -30,10 +35,11 @@ getAbout = function(req, res) {
                     educations: education,
                     admin: req.session.admin
                 });
+                return;
             });
         });
     });
-};
+}
 
 /*
 *  Show resume section
@@ -41,32 +47,28 @@ getAbout = function(req, res) {
 
 getAboutSection = function(req, res) {
 
+    //redirect to specific section on about page
     res.redirect('/about/'+req.params.section)
+    return;
 };
 
-/*
-*  Redirect to about
-*/
-
-aboutRedirect = function(req, res) {
-
-    req.method = 'GET';
-    res.redirect('/about');
-};
 
 /*
 *  Show new skill section
 */
 
 showNewSkill = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
 
+    //display add-skill page with session
     res.render('add-skill', {
         pageTitle: 'Add Skill',
         admin: req.session.admin
     });
+    return;
 };
 
 /*
@@ -74,14 +76,17 @@ showNewSkill = function(req, res) {
 */
 
 showNewExperience = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
 
+    //display add-experience page with session
     res.render('add-experience', {
         pageTitle: 'Add Experience',
         admin: req.session.admin
     });
+    return;
 };
 
 /*
@@ -89,14 +94,17 @@ showNewExperience = function(req, res) {
 */
 
 showNewEducation = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
 
+    //display add-education page with session
     res.render('add-education', {
         pageTitle: 'Add Education',
         admin: req.session.admin
     });
+    return;
 };
 
 /*
@@ -104,19 +112,24 @@ showNewEducation = function(req, res) {
 */
 
 editSkill = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //display skill by id in edit form
     schemas.AppSkill.findOne({_id: req.params.id}, function(err, skill) {
         if (err) {
             console.log("ERROR: unable to display skill to edit");
         }
 
+        //display edit-skill page, the skill values, and session
         res.render('edit-skill', {
             pageTitle: 'Edit Skill',
             skill: skill,
             admin: req.session.admin
         });
+        return;
     });
 };
 
@@ -125,25 +138,31 @@ editSkill = function(req, res) {
 */
 
 updateSkill = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //update skill with changes to edit form
     schemas.AppSkill.findOne({_id: req.params.id}, function(err, skill) {
         if (err) {
             console.log("ERROR: unable to update project");
         }
 
+        //set skill values to form values
         skill.header = req.body.header;
         skill.date = req.body.date;
         skill.description = req.body.description;
 
+        //update skill in collection
         skill.save(function(err) {
             if (err) {
                 console.log("ERROR: unable to save skill");
             }
         });
 
-        res.redirect('/about');
+        //redirect to about skills section
+        res.redirect('/about/#skills');
         return;
     });
 };
@@ -153,19 +172,24 @@ updateSkill = function(req, res) {
 */
 
 editExperience = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //display experience by id in edit form
     schemas.AppExperience.findOne({_id: req.params.id}, function(err, experience) {
         if (err) {
             console.log("ERROR: unable to display experience to edit");
         }
 
+        //display edit-experience form, experience values, with session
         res.render('edit-experience', {
             pageTitle: 'Edit Experience',
             experience: experience,
             admin: req.session.admin
         });
+        return;
     });
 };
 
@@ -174,14 +198,18 @@ editExperience = function(req, res) {
 */
 
 updateExperience = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //update experience with edit form values
     schemas.AppExperience.findOne({_id: req.params.id}, function(err, experience) {
         if (err) {
             console.log("ERROR: unable to update experience");
         }
 
+        //set experience values from edit form
         experience.header = req.body.header;
         experience.date = req.body.date;
         experience.list1 = req.body.list1;
@@ -189,13 +217,15 @@ updateExperience = function(req, res) {
         experience.list3 = req.body.list3;
         experience.list4 = req.body.list4;
 
+        //save experience in collection
         experience.save(function(err) {
             if (err) {
                 console.log("ERROR: unable to save experience");
             }
         });
 
-        res.redirect('/about');
+        //redirect to about experience section
+        res.redirect('/about/#experience');
         return;
     });
 };
@@ -205,14 +235,18 @@ updateExperience = function(req, res) {
 */
 
 editEducation = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //display education values in edit form
     schemas.AppEducation.findOne({_id: req.params.id}, function(err, education) {
         if (err) {
             console.log("ERROR: unable to display education to edit");
         }
 
+        //display edit-education page, education values, and session
         res.render('edit-education', {
             pageTitle: 'Edit Education',
             education: education,
@@ -226,25 +260,31 @@ editEducation = function(req, res) {
 */
 
 updateEducation = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //update education values with edit form values
     schemas.AppEducation.findOne({_id: req.params.id}, function(err, education) {
         if (err) {
             console.log("ERROR: unable to update project");
         }
 
+        //set education values to edit form values
         education.header = req.body.header;
         education.subheader = req.body.subheader;
         education.description = req.body.description;
 
+        //update education in collection
         education.save(function(err) {
             if (err) {
                 console.log("ERROR: unable to save skill");
             }
         });
 
-        res.redirect('/about');
+        //redirect to about education section
+        res.redirect('/about/#education');
         return;
     });
 };
@@ -254,22 +294,28 @@ updateEducation = function(req, res) {
 */
 
 createNewSkill = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //create skill schema to store add form values
     var newSkill = new schemas.AppSkill({
         header: req.body.header,
         date: req.body.date,
         description: req.body.description,
     });
 
+    //save skill to collection
     newSkill.save(function(err) {
         if (err) {
             console.log('ERROR: unable to create skill');
         }
     });
 
+    //send ajax request to redirect to about section
     res.send({redirect: '/about'});
+    return;
 };
 
 /*
@@ -277,9 +323,12 @@ createNewSkill = function(req, res) {
 */
 
 createNewExperience = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //create experience schema to store add form values
     var newExperience = new schemas.AppExperience({
         header: req.body.header,
         subheader: req.body.subheader,
@@ -290,13 +339,16 @@ createNewExperience = function(req, res) {
         list4: req.body.list4
     });
 
+    //save experience to collection
     newExperience.save(function(err) {
         if (err) {
             console.log('ERROR: unable to create experience');
         }
     });
 
+    //send ajax request to redirect to about section
     res.send({redirect: '/about'});
+    return;
 };
 
 /*
@@ -304,22 +356,28 @@ createNewExperience = function(req, res) {
 */
 
 createNewEducation = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //create education schema to store add form values
     var newEducation = new schemas.AppEducation({
         header: req.body.header,
         subheader: req.body.subheader,
         description: req.body.description,
     });
 
+    //save education to collection
     newEducation.save(function(err) {
         if (err) {
             console.log('ERROR: unable to create education');
         }
     });
 
+    //send ajax request to redirect to about section
     res.send({redirect: '/about'});
+    return;
 };
 
 /*
@@ -327,16 +385,21 @@ createNewEducation = function(req, res) {
 */
 
 removeSkill = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //remove skill by id
     schemas.AppSkill.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             console.log('ERROR: unable to remove skill');
         }
     });
 
+    //redirect to about section
     res.redirect('/about');
+    return;
 };
 
 /*
@@ -344,16 +407,21 @@ removeSkill = function(req, res) {
 */
 
 removeExperience = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //remove experience by id
     schemas.AppExperience.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             console.log('ERROR: unable to remove skill');
         }
     });
 
+    //redirect to about section
     res.redirect('/about');
+    return;
 };
 
 /*
@@ -361,16 +429,21 @@ removeExperience = function(req, res) {
 */
 
 removeEducation = function(req, res) {
+    //if admin session doesn't exist, redirect to about page
     if (req.session.admin !== 'jcurray') {
         res.redirect('/about');
     }
+
+    //remove education by id
     schemas.AppEducation.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             console.log('ERROR: unable to remove skill');
         }
     });
 
+    //redirect to about section
     res.redirect('/about');
+    return;
 };
 
 /*
@@ -382,7 +455,6 @@ module.exports = function() {
     app.get('/about/add-skill', this.showNewSkill);
     app.get('/about/add-experience', this.showNewExperience);
     app.get('/about/add-education', this.showNewEducation);
-    app.get('/about/redirect', this.aboutRedirect);
     app.get('/about/:section', this.getAboutSection);
     app.get('/about/:id/edit-skill', this.editSkill);
     app.put('/about/:id/edit-skill', this.updateSkill);

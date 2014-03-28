@@ -17,8 +17,9 @@ html
                     h2 Web Developer
                         | Based in Honolulu, HI
                     .social.clearfix
-                        a.linkedin(href="http://linkedin.com" target="_blank") LinkedIn
-                        a.github(href="http://github.com" target="_blank") Github
+                        a.twitter(href="https://twitter.com/jasonpiros" target="_blank") Twitter
+                        a.github(href="http://github.com/jahsan87" target="_blank") Github
+                        a.linkedin(href="http://www.linkedin.com/pub/jason-piros/8b/550/b9a" target="_blank") LinkedIn
                     if admin === 'jcurray'
                         a(href='/logout')
                             div.admin-buttons Logout
@@ -52,7 +53,9 @@ html
                     h3.contact Contact
                         span.contact
                     ul
-                        li jason.piros@gmail.com
+                        li 
+                            a(href='mailto:jasonpiros@gmail.com' target="_top") Email
             block mainContent
         script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src="//code.jquery.com/ui/1.10.4/jquery-ui.js")
         script(src='/javascripts/javascript.js')

@@ -1,5 +1,9 @@
  $(document).ready(function() {   
 
+    /*
+    *  Listener to toggle class on menu headers
+    */
+
     $('.menus h3').on('click', function(event) {
         $(this).next('ul').toggleClass('open');
         $(this).children('span').toggleClass('open');
@@ -99,20 +103,4 @@
         });
     });
 
-    /*
-    *  Listener to logout
-    */
-
-    $('#logout').click(function(event) {
-        event.preventDefault();
-        $.ajax('/logout', {
-            method: 'GET',
-            data: $('#logout').serialize(),
-            success: function(data) {
-                if (typeof data.redirect == 'string') {
-                    window.location = data.redirect;
-                }
-            }
-        });
-    });
 });

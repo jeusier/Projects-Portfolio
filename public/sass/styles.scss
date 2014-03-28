@@ -11,13 +11,13 @@ $padding: 10px;
 $margin: 10px;
 
 $font-size: 14px;
-$font-family: 'Lato', sans-serif;
+$font-family: 'Open Sans', sans-serif;
 $line-height: 1.4;
 
 $large: 1000px;
 $small: 320px;
 
-@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700');
 @import url('normalize.css');
 
 //Utilities
@@ -83,45 +83,50 @@ body {
 
         h1,
         .name {
-            font-size: 200%;
+            font-size: 250%;
+            padding-bottom: $padding;
         }
 
         h2 {
             font-size: 110%;
             white-space: pre;
             font-style: italic;
+            padding-bottom: $padding;
         }
 
         .social {
-            width: 60px;
+            width: 168px;
             margin: $margin auto;
 
                 a {
                     float: left;
-                    width: 25px;
-                    height: 25px;
+                    width: 52px;
+                    height: 52px;
                     margin: 0 $margin/5;
-                    background: url(../images/social-sprite.png) no-repeat;
+                    background: url(../images/social-sprite-purple.png) no-repeat;
                     text-indent: -9999px;
 
-                    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
-                        background: url(../images/social-sprite@2x.png) no-repeat;
-                        background-size: 51px 51px;
-                    }
-
-                    &.linkedin {
-                        background-position: -25px 0px;
+                    &.twitter {
+                        background-position: 0px 0px;
 
                         &:hover {
-                            background-position: -25px -25px;
+                            background-position: 0px -50px;
                         }
                     }
 
                     &.github {
-                        background-position: 0px 0px;
+                        background-position: -51px 0px;
 
                         &:hover {
-                            background-position: 0px -25px;
+                            background-position: -51px -50px;
+                        }
+                    }
+
+                    &.linkedin {
+                        background-position: -103px 0px;
+
+                        &:hover {
+                            background-position: -103px -50px;
                         }
                     }
                 }
@@ -460,7 +465,6 @@ body {
             }
 
             .resume-body {
-                margin-bottom: $margin*2;
                 padding-bottom: $padding*2;
 
                 .resume-date {

@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
 @import url("normalize.css");
 /* line 24, ../sass/styles.scss */
 .clearfix:after {
@@ -28,7 +28,7 @@ main {
 body {
   color: #bc99bc;
   font-size: 14px;
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.4;
   background: #1f001f;
 }
@@ -70,56 +70,59 @@ body {
 /* line 85, ../sass/styles.scss */
 .sidebar .my-info h1,
 .sidebar .my-info .name {
-  font-size: 200%;
+  font-size: 250%;
+  padding-bottom: 10px;
 }
-/* line 89, ../sass/styles.scss */
+/* line 90, ../sass/styles.scss */
 .sidebar .my-info h2 {
   font-size: 110%;
   white-space: pre;
   font-style: italic;
+  padding-bottom: 10px;
 }
-/* line 95, ../sass/styles.scss */
+/* line 97, ../sass/styles.scss */
 .sidebar .my-info .social {
-  width: 60px;
+  width: 168px;
   margin: 10px auto;
 }
-/* line 99, ../sass/styles.scss */
+/* line 101, ../sass/styles.scss */
 .sidebar .my-info .social a {
   float: left;
-  width: 25px;
-  height: 25px;
+  width: 52px;
+  height: 52px;
   margin: 0 2px;
-  background: url(../images/social-sprite.png) no-repeat;
+  background: url(../images/social-sprite-purple.png) no-repeat;
   text-indent: -9999px;
 }
-@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
-  /* line 99, ../sass/styles.scss */
-  .sidebar .my-info .social a {
-    background: url(../images/social-sprite@2x.png) no-repeat;
-    background-size: 51px 51px;
-  }
-}
-/* line 112, ../sass/styles.scss */
-.sidebar .my-info .social a.linkedin {
-  background-position: -25px 0px;
-}
-/* line 115, ../sass/styles.scss */
-.sidebar .my-info .social a.linkedin:hover {
-  background-position: -25px -25px;
-}
-/* line 120, ../sass/styles.scss */
-.sidebar .my-info .social a.github {
+/* line 109, ../sass/styles.scss */
+.sidebar .my-info .social a.twitter {
   background-position: 0px 0px;
 }
-/* line 123, ../sass/styles.scss */
-.sidebar .my-info .social a.github:hover {
-  background-position: 0px -25px;
+/* line 112, ../sass/styles.scss */
+.sidebar .my-info .social a.twitter:hover {
+  background-position: 0px -50px;
 }
-/* line 130, ../sass/styles.scss */
+/* line 117, ../sass/styles.scss */
+.sidebar .my-info .social a.github {
+  background-position: -51px 0px;
+}
+/* line 120, ../sass/styles.scss */
+.sidebar .my-info .social a.github:hover {
+  background-position: -51px -50px;
+}
+/* line 125, ../sass/styles.scss */
+.sidebar .my-info .social a.linkedin {
+  background-position: -103px 0px;
+}
+/* line 128, ../sass/styles.scss */
+.sidebar .my-info .social a.linkedin:hover {
+  background-position: -103px -50px;
+}
+/* line 135, ../sass/styles.scss */
 .sidebar .my-info a {
   text-decoration: none;
 }
-/* line 133, ../sass/styles.scss */
+/* line 138, ../sass/styles.scss */
 .sidebar .my-info a .admin-buttons {
   background-color: #bc99bc;
   width: 160px;
@@ -132,17 +135,17 @@ body {
   font-size: 110%;
   font-weight: 700;
 }
-/* line 149, ../sass/styles.scss */
+/* line 154, ../sass/styles.scss */
 .sidebar .menus {
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 149, ../sass/styles.scss */
+  /* line 154, ../sass/styles.scss */
   .sidebar .menus {
     padding: 20px 30px;
   }
 }
-/* line 156, ../sass/styles.scss */
+/* line 161, ../sass/styles.scss */
 .sidebar .menus h3 {
   text-transform: uppercase;
   font-size: 150%;
@@ -151,18 +154,18 @@ body {
   margin: 20px 110px 10px;
 }
 @media only screen and (min-width: 320px) {
-  /* line 156, ../sass/styles.scss */
+  /* line 161, ../sass/styles.scss */
   .sidebar .menus h3 {
     margin: 20px auto 20px;
   }
 }
 @media only screen and (min-width: 1000px) {
-  /* line 156, ../sass/styles.scss */
+  /* line 161, ../sass/styles.scss */
   .sidebar .menus h3 {
     margin: 20px 0 10px 0;
   }
 }
-/* line 172, ../sass/styles.scss */
+/* line 177, ../sass/styles.scss */
 .sidebar .menus h3 span.work:before {
   content: "";
   position: absolute;
@@ -175,7 +178,7 @@ body {
   border-bottom: 7px solid transparent;
   border-right: 0px;
 }
-/* line 187, ../sass/styles.scss */
+/* line 192, ../sass/styles.scss */
 .sidebar .menus h3 span.about:before {
   content: "";
   position: absolute;
@@ -188,7 +191,7 @@ body {
   border-bottom: 7px solid transparent;
   border-right: 0px;
 }
-/* line 202, ../sass/styles.scss */
+/* line 207, ../sass/styles.scss */
 .sidebar .menus h3 span.contact:before {
   content: "";
   position: absolute;
@@ -201,7 +204,7 @@ body {
   border-bottom: 7px solid transparent;
   border-right: 0px;
 }
-/* line 220, ../sass/styles.scss */
+/* line 225, ../sass/styles.scss */
 .sidebar .menus h3 span.contact.open:before,
 .sidebar .menus h3 span.about.open:before,
 .sidebar .menus h3 span.work.open:before {
@@ -211,26 +214,26 @@ body {
   border-bottom: 0px;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 232, ../sass/styles.scss */
+  /* line 237, ../sass/styles.scss */
   .sidebar .menus h3 span.contact,
   .sidebar .menus h3 span.about,
   .sidebar .menus h3 span.work {
     display: none;
   }
 }
-/* line 237, ../sass/styles.scss */
+/* line 242, ../sass/styles.scss */
 .sidebar .menus h3.work {
   color: #441e9a;
 }
-/* line 242, ../sass/styles.scss */
+/* line 247, ../sass/styles.scss */
 .sidebar .menus h3.about {
   color: #960f90;
 }
-/* line 247, ../sass/styles.scss */
+/* line 252, ../sass/styles.scss */
 .sidebar .menus h3.contact {
   color: #1b49c4;
 }
-/* line 253, ../sass/styles.scss */
+/* line 258, ../sass/styles.scss */
 .sidebar .menus ul {
   list-style: none;
   padding: 0;
@@ -240,26 +243,26 @@ body {
   line-height: 1.54;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 253, ../sass/styles.scss */
+  /* line 258, ../sass/styles.scss */
   .sidebar .menus ul {
     display: block;
     width: auto;
   }
 }
-/* line 266, ../sass/styles.scss */
+/* line 271, ../sass/styles.scss */
 .sidebar .menus ul.open {
   display: inline-block;
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 266, ../sass/styles.scss */
+  /* line 271, ../sass/styles.scss */
   .sidebar .menus ul.open {
     display: block;
     width: auto;
     text-align: center;
   }
 }
-/* line 278, ../sass/styles.scss */
+/* line 283, ../sass/styles.scss */
 .sidebar .menus ul li a {
   color: #5e445e;
   text-decoration: none;
@@ -269,7 +272,7 @@ body {
   -ms-transition: color 0.4s ease;
   transition: color 0.4s ease;
 }
-/* line 287, ../sass/styles.scss */
+/* line 292, ../sass/styles.scss */
 .sidebar .menus ul li a:hover {
   color: #edcced;
   -webkit-transition: color 0.4s ease;
@@ -279,20 +282,20 @@ body {
   transition: color 0.4s ease;
 }
 
-/* line 301, ../sass/styles.scss */
+/* line 306, ../sass/styles.scss */
 .content {
   width: 100%;
   min-height: 100%;
   background: #edcced;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 301, ../sass/styles.scss */
+  /* line 306, ../sass/styles.scss */
   .content {
     float: left;
     width: 73%;
   }
 }
-/* line 311, ../sass/styles.scss */
+/* line 316, ../sass/styles.scss */
 .content form {
   margin: auto;
   position: relative;
@@ -306,7 +309,7 @@ body {
   text-decoration: none;
   padding: 10px;
 }
-/* line 327, ../sass/styles.scss */
+/* line 332, ../sass/styles.scss */
 .content textarea,
 .content select,
 .content input {
@@ -314,17 +317,17 @@ body {
   font-style: normal;
   display: block;
 }
-/* line 333, ../sass/styles.scss */
+/* line 338, ../sass/styles.scss */
 .content label {
   float: left;
   text-align: left;
   width: 100%;
 }
-/* line 339, ../sass/styles.scss */
+/* line 344, ../sass/styles.scss */
 .content .portfolio-item {
   background: #bc99bc;
 }
-/* line 342, ../sass/styles.scss */
+/* line 347, ../sass/styles.scss */
 .content .portfolio-item:before {
   content: "";
   position: absolute;
@@ -334,7 +337,7 @@ body {
   left: 17px;
   bottom: 0px;
 }
-/* line 352, ../sass/styles.scss */
+/* line 357, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info {
   min-height: 100%;
   color: #5e445e;
@@ -345,19 +348,19 @@ body {
   box-sizing: border-box;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 352, ../sass/styles.scss */
+  /* line 357, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info {
     float: left;
     width: 36%;
   }
 }
-/* line 366, ../sass/styles.scss */
+/* line 371, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name {
   font-size: 150%;
   color: black;
   margin-bottom: 10px;
 }
-/* line 371, ../sass/styles.scss */
+/* line 376, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name:before {
   content: "";
   position: absolute;
@@ -369,46 +372,46 @@ body {
   border-left: 24px solid #1f001f;
   border-bottom: 12px solid transparent;
 }
-/* line 383, ../sass/styles.scss */
+/* line 388, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:link {
   color: #1f001f;
   text-decoration: none;
 }
-/* line 388, ../sass/styles.scss */
+/* line 393, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:visited {
   color: #441e9a;
   text-decoration: none;
 }
-/* line 393, ../sass/styles.scss */
+/* line 398, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:hover {
   color: #960f90;
   text-decoration: none;
 }
-/* line 400, ../sass/styles.scss */
+/* line 405, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .description {
   text-align: left;
   font-size: 110%;
 }
-/* line 405, ../sass/styles.scss */
+/* line 410, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta {
   color: #1f001f;
   margin-top: 10px;
   font-size: 100%;
 }
-/* line 410, ../sass/styles.scss */
+/* line 415, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta p {
   margin: 0;
 }
-/* line 414, ../sass/styles.scss */
+/* line 419, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta span {
   font-weight: 700;
 }
-/* line 419, ../sass/styles.scss */
+/* line 424, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category {
   color: black;
   margin-bottom: 10px;
 }
-/* line 423, ../sass/styles.scss */
+/* line 428, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category:before {
   content: "";
   position: absolute;
@@ -420,14 +423,14 @@ body {
   border-left: 24px solid #1f001f;
   border-bottom: 12px solid transparent;
 }
-/* line 435, ../sass/styles.scss */
+/* line 440, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category .resume-section {
   font-size: 200%;
   font-weight: 700;
   font-style: italic;
   color: #1f001f;
 }
-/* line 444, ../sass/styles.scss */
+/* line 449, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image {
   padding: 20px;
   background: #edcced;
@@ -435,24 +438,23 @@ body {
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 444, ../sass/styles.scss */
+  /* line 449, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image {
     float: left;
     width: 64%;
   }
 }
-/* line 456, ../sass/styles.scss */
+/* line 461, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image img {
   width: 100%;
   max-width: 610px;
   height: auto;
 }
-/* line 462, ../sass/styles.scss */
+/* line 467, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body {
-  margin-bottom: 20px;
   padding-bottom: 20px;
 }
-/* line 466, ../sass/styles.scss */
+/* line 470, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-date {
   float: right;
   color: #1f001f;
@@ -460,7 +462,7 @@ body {
   margin: 0 0 10px;
   line-height: 1.4;
 }
-/* line 474, ../sass/styles.scss */
+/* line 478, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-header {
   color: #441e9a;
   font-size: 130%;
@@ -468,7 +470,7 @@ body {
   letter-spacing: -1px;
   text-align: left;
 }
-/* line 482, ../sass/styles.scss */
+/* line 486, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-subheader {
   color: #960f90;
   font-size: 110%;
@@ -476,14 +478,14 @@ body {
   font-style: italic;
   text-align: left;
 }
-/* line 490, ../sass/styles.scss */
+/* line 494, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-description {
   color: #5e445e;
   text-align: left;
   padding: 15px 0;
   font-size: 110%;
 }
-/* line 497, ../sass/styles.scss */
+/* line 501, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list {
   list-style: inside;
   text-align: left;
@@ -491,11 +493,11 @@ body {
   color: #5e445e;
   font-size: 110%;
 }
-/* line 504, ../sass/styles.scss */
+/* line 508, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list li {
   list-style-type: disc;
 }
-/* line 511, ../sass/styles.scss */
+/* line 515, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .error {
   background-color: #960f90;
   color: #1f001f;
