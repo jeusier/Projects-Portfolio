@@ -1,0 +1,16 @@
+extends layout
+
+block mainContent
+    div.content
+        - each blog in blogs
+            article.portfolio-item.clearfix
+                header.portfolio-info
+                    div.name
+                        if admin === 'jcurray'
+                            a(href='/blogs/#{blog._id}/edit-blog')= blog.title
+                        else
+                            h1= blog.title
+                    div.blog-date Posted on: #{blog.date}
+                figure.portfolio-image.clearfix
+                    div.blog-body
+                        p.blog-post= blog.post

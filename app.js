@@ -11,6 +11,7 @@ var path = require('path');
 var projects = require('./routes/projects');
 var about = require('./routes/about');
 var login = require('./routes/login');
+var blogs = require('./routes/blogs');
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(projects);
 app.use(about);
 app.use(login);
+app.use(blogs);
 
 // development only
 if ('development' == app.get('env')) {

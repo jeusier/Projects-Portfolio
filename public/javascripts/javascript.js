@@ -21,9 +21,6 @@
             type: 'POST',
             data: $('#create').serialize(),
             success: function(data) {
-                var fixInput = $('#name').val();
-                fixInput = fixInput.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
-                console.log(fixInput);
                 if (typeof data.redirect == 'string') {
                     window.location = data.redirect;
                 }
@@ -76,6 +73,23 @@
         $.ajax('/about/add-education', {
             type: 'POST',
             data: $('#create-education').serialize(),
+            success: function(data) {
+                if (typeof data.redirect == 'string') {
+                    window.location = data.redirect;
+                }
+            }
+        });
+    });
+
+    /*
+    *  Listener to create new project
+    */
+
+    $('#create-blog').on('submit', function(event) {
+        event.preventDefault();
+        $.ajax('/blogs', {
+            type: 'POST',
+            data: $('#create-blog').serialize(),
             success: function(data) {
                 if (typeof data.redirect == 'string') {
                     window.location = data.redirect;

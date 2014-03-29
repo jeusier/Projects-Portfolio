@@ -15,7 +15,7 @@ getAllBlogs = function(req, res) {
         }
 
         //display index page with all blogs and session
-        res.render('index', {
+        res.render('blogs', {
             pageTitle: 'Jason Piros - Blog',
             blogs: blog,
             admin: req.session.admin
@@ -85,12 +85,10 @@ updateBlog = function(req, res) {
         }
 
         var title = req.body.title.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
-        var date = req.body.date.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
         var post = req.body.post.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
 
         //set project values to the current edit form values
         blog.title = title;
-        blog.date = date;
         blog.post = post;
 
         //save values to project collection
@@ -139,13 +137,14 @@ createNewBlog = function(req, res) {
     }
 
     var title = req.body.title.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
-    var date = req.body.date.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
     var post = req.body.post.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
 
     //set add blog form values to new schema
     var newBlog = new schemas.AppBlog({
         title: title,
-        date: date,
+        date: {
+            type: Date,
+            default: Date.now()},
         post: post
     });
 
@@ -167,11 +166,11 @@ createNewBlog = function(req, res) {
 
 module.exports = function() {
     app.get('/blogs', this.getAllBlogs);
-    app.get('/blogs/add', this.showNewProject);
-    app.get('/blogs/:id/edit', this.editProject);
-    app.put('/blogs/:id/edit', this.updateProject);
-    app.delete('/blogs/:id', this.removeProject);
-    app.post('/blogs', this.createNewProject);
+    app.get('/blogs/add-blog', this.showNewBlog);
+    app.get('/blogs/:id/edit-blog', this.editBlog);
+    app.put('/blogs/:id/edit-blog', this.updateBlog);
+    app.delete('/blogs/:id', this.removeBlog);
+    app.post('/blogs', this.createNewBlog);
     
 
     return app;

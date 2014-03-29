@@ -39,6 +39,17 @@ var newEducationsSchema = new mongoose.Schema({
     description: String
 });
 
+//schema for blogs collection
+var newBlogsSchema = new mongoose.Schema({
+    title: String,
+    post: String,
+    date: {
+        type: Date,
+        default: Date.now
+    }
+
+})
+
 /*
 *  Store models in variables
 */
@@ -46,6 +57,7 @@ var projects = mongoose.model('projects', newProjectSchema);
 var skills = mongoose.model('skills', newSkillsSchema);
 var experience = mongoose.model('experiences', newExperiencesSchema);
 var education = mongoose.model('educations', newEducationsSchema);
+var blogs = mongoose.model('blogs', newBlogsSchema);
 
 /*
 *  Model variables to be available in app.js
@@ -55,3 +67,4 @@ module.exports.AppProject = projects;
 module.exports.AppSkill = skills;
 module.exports.AppExperience = experience;
 module.exports.AppEducation = education;
+module.exports.AppBlog = blogs;

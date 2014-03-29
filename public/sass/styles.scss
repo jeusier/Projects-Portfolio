@@ -6,6 +6,7 @@ $purple: #441e9a;
 $pink: #960f90;
 $blue: #1b49c4;
 $darkpurple: #1F001F;
+$lightblue: #0969A2;
 
 $padding: 10px;
 $margin: 10px;
@@ -210,6 +211,21 @@ body {
                 }
             }
 
+            span.blogs {
+                &:before {
+                    content: "";
+                    position: absolute;
+                    left: -170px;
+                    top: 15px;
+                    width: 0px;
+                    height: 0px;
+                    border-top: 7px solid transparent;
+                    border-left: 14px solid $grey;
+                    border-bottom: 7px solid transparent;
+                    border-right: 0px;
+                }
+            }
+
             span.contact {
                 &:before {
                     content: "";
@@ -226,6 +242,7 @@ body {
             }
 
             span.contact,
+            span.blogs,
             span.about,
             span.work {
                 &.open {
@@ -254,6 +271,10 @@ body {
             &.about {
                 color: $pink;
 
+            }
+
+            &.blogs {
+                color: $lightblue;
             }
 
             &.contact {
@@ -441,6 +462,14 @@ body {
 
             }
 
+            .blog-date {
+                font-size: 150%;
+
+                @media only screen and (min-width: $large) {
+                    font-size: 100%;
+                }
+            }
+
             .description {
                 text-align: left;
                 font-size: 180%;
@@ -596,6 +625,21 @@ body {
                     }
                 }
 
+            }
+
+            .blog-body {
+                padding-bottom: $padding*2;
+
+                .blog-post {
+                    color: $darkgrey;
+                    text-align: left;
+                    padding: $padding*1.5 0;
+                    font-size: 150%;
+
+                    @media only screen and (min-width: $large) {
+                        font-size: 110%;
+                    }
+                }
             }
 
             .error {

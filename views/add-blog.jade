@@ -1,0 +1,16 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Add Blog
+            figure.portfolio-image.clearfix
+                form(role="form" id='create-blog' action='/blogs' method='post')
+                    div
+                        label(for="title") Title
+                        input(type="text" id="title" name="title" placeholder="Enter Blog Title" autofocus)
+                    div
+                        label(for="post") Post
+                        textarea(name="post" id="post" rows=15 placeholder="Enter Blog Post")
+                    button(type="submit") Add Blog

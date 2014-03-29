@@ -1,0 +1,20 @@
+extends layout
+
+block mainContent
+    div.content
+        article.portfolio-item.clearfix
+            header.portfolio-info
+                div.name Edit Blog
+            figure.portfolio-image.clearfix
+                form(role="form" id='update-blog' action='/blogs/#{blog._id}/edit-blog' method='post')
+                    input(type='hidden', name='_method', value='put')
+                    div
+                        label(for="title") Title
+                        input(type="text" id="title" name="title" value="#{blog.title}" autofocus)
+                    div
+                        label(for="post") Post
+                        textarea(name="post" id="post" rows=15 value="#{blog.post}")= blog.post
+                    button(type="submit") Update Blog
+                form(role="form" id='delete-blog' action='/blogs/#{blog._id}' method='post')
+                    input(type='hidden' name='_method' value='delete')
+                    button(type="submit") Delete Blog
