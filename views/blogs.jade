@@ -10,7 +10,7 @@ block mainContent
                             a(href='/blogs/#{blog._id}/edit-blog')= blog.title
                         else
                             h1= blog.title
-                    div.blog-date Posted on: #{blog.date}
+                    div.blog-date Posted on: #{blog.date.toDateString()}
                 figure.portfolio-image.clearfix
                     div.blog-body
-                        p.blog-post= blog.post
+                        pre.blog-post= blog.post

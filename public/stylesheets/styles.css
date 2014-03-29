@@ -236,30 +236,31 @@ body {
   border-bottom: 0px;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 261, ../sass/styles.scss */
+  /* line 262, ../sass/styles.scss */
   .sidebar .menus h3 span.contact,
+  .sidebar .menus h3 span.blogs,
   .sidebar .menus h3 span.about,
   .sidebar .menus h3 span.work {
     display: none;
   }
 }
-/* line 266, ../sass/styles.scss */
+/* line 267, ../sass/styles.scss */
 .sidebar .menus h3.work {
   color: #441e9a;
 }
-/* line 271, ../sass/styles.scss */
+/* line 272, ../sass/styles.scss */
 .sidebar .menus h3.about {
   color: #960f90;
 }
-/* line 276, ../sass/styles.scss */
+/* line 277, ../sass/styles.scss */
 .sidebar .menus h3.blogs {
   color: #0969a2;
 }
-/* line 280, ../sass/styles.scss */
+/* line 281, ../sass/styles.scss */
 .sidebar .menus h3.contact {
   color: #1b49c4;
 }
-/* line 286, ../sass/styles.scss */
+/* line 287, ../sass/styles.scss */
 .sidebar .menus ul {
   list-style: none;
   padding: 0;
@@ -269,7 +270,7 @@ body {
   line-height: 1.82;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 286, ../sass/styles.scss */
+  /* line 287, ../sass/styles.scss */
   .sidebar .menus ul {
     display: block;
     width: auto;
@@ -277,20 +278,20 @@ body {
     line-height: 1.54;
   }
 }
-/* line 301, ../sass/styles.scss */
+/* line 302, ../sass/styles.scss */
 .sidebar .menus ul.open {
   display: inline-block;
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 301, ../sass/styles.scss */
+  /* line 302, ../sass/styles.scss */
   .sidebar .menus ul.open {
     display: block;
     width: auto;
     text-align: center;
   }
 }
-/* line 313, ../sass/styles.scss */
+/* line 314, ../sass/styles.scss */
 .sidebar .menus ul li a {
   color: #edcced;
   text-decoration: none;
@@ -301,7 +302,7 @@ body {
   transition: color 0.4s ease;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 313, ../sass/styles.scss */
+  /* line 314, ../sass/styles.scss */
   .sidebar .menus ul li a {
     color: #5e445e;
     text-decoration: none;
@@ -311,7 +312,7 @@ body {
     -ms-transition: color 0.4s ease;
     transition: color 0.4s ease;
   }
-  /* line 331, ../sass/styles.scss */
+  /* line 332, ../sass/styles.scss */
   .sidebar .menus ul li a:hover {
     color: #edcced;
     -webkit-transition: color 0.4s ease;
@@ -322,20 +323,20 @@ body {
   }
 }
 
-/* line 346, ../sass/styles.scss */
+/* line 347, ../sass/styles.scss */
 .content {
   width: 100%;
   min-height: 100%;
   background: #edcced;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 346, ../sass/styles.scss */
+  /* line 347, ../sass/styles.scss */
   .content {
     float: left;
     width: 73%;
   }
 }
-/* line 356, ../sass/styles.scss */
+/* line 357, ../sass/styles.scss */
 .content form {
   margin: auto;
   position: relative;
@@ -350,12 +351,12 @@ body {
   padding: 10px;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 356, ../sass/styles.scss */
+  /* line 357, ../sass/styles.scss */
   .content form {
     font-size: 130%;
   }
 }
-/* line 376, ../sass/styles.scss */
+/* line 377, ../sass/styles.scss */
 .content textarea,
 .content select,
 .content input {
@@ -363,17 +364,17 @@ body {
   font-style: normal;
   display: block;
 }
-/* line 382, ../sass/styles.scss */
+/* line 383, ../sass/styles.scss */
 .content label {
   float: left;
   text-align: left;
   width: 100%;
 }
-/* line 388, ../sass/styles.scss */
+/* line 389, ../sass/styles.scss */
 .content .portfolio-item {
   background: #bc99bc;
 }
-/* line 391, ../sass/styles.scss */
+/* line 392, ../sass/styles.scss */
 .content .portfolio-item:before {
   content: "";
   position: absolute;
@@ -383,7 +384,7 @@ body {
   left: 17px;
   bottom: 0px;
 }
-/* line 401, ../sass/styles.scss */
+/* line 402, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info {
   min-height: 100%;
   color: #5e445e;
@@ -394,25 +395,25 @@ body {
   box-sizing: border-box;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 401, ../sass/styles.scss */
+  /* line 402, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info {
     float: left;
     width: 36%;
   }
 }
-/* line 415, ../sass/styles.scss */
+/* line 416, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name {
   font-size: 300%;
   color: black;
   padding-bottom: 20px;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 415, ../sass/styles.scss */
+  /* line 416, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .name {
     font-size: 150%;
   }
 }
-/* line 424, ../sass/styles.scss */
+/* line 425, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name:before {
   content: "";
   position: absolute;
@@ -425,7 +426,7 @@ body {
   border-bottom: 12px solid transparent;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 424, ../sass/styles.scss */
+  /* line 425, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .name:before {
     content: "";
     position: absolute;
@@ -438,43 +439,43 @@ body {
     border-bottom: 12px solid transparent;
   }
 }
-/* line 448, ../sass/styles.scss */
+/* line 449, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:link {
   color: #1f001f;
   text-decoration: none;
 }
-/* line 453, ../sass/styles.scss */
+/* line 454, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:visited {
   color: #441e9a;
   text-decoration: none;
 }
-/* line 458, ../sass/styles.scss */
+/* line 459, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .name a:hover {
   color: #960f90;
   text-decoration: none;
 }
-/* line 465, ../sass/styles.scss */
+/* line 466, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .blog-date {
   font-size: 150%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 465, ../sass/styles.scss */
+  /* line 466, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .blog-date {
     font-size: 100%;
   }
 }
-/* line 473, ../sass/styles.scss */
+/* line 474, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .description {
   text-align: left;
   font-size: 180%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 473, ../sass/styles.scss */
+  /* line 474, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .description {
     font-size: 110%;
   }
 }
-/* line 482, ../sass/styles.scss */
+/* line 483, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta {
   color: #1f001f;
   margin-top: 10px;
@@ -482,25 +483,25 @@ body {
   font-size: 150%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 482, ../sass/styles.scss */
+  /* line 483, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .meta {
     font-size: 100%;
   }
 }
-/* line 492, ../sass/styles.scss */
+/* line 493, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta p {
   margin: 0;
 }
-/* line 496, ../sass/styles.scss */
+/* line 497, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .meta span {
   font-weight: 700;
 }
-/* line 501, ../sass/styles.scss */
+/* line 502, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category {
   color: black;
   margin-bottom: 10px;
 }
-/* line 505, ../sass/styles.scss */
+/* line 506, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category:before {
   content: "";
   position: absolute;
@@ -513,7 +514,7 @@ body {
   border-bottom: 12px solid transparent;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 505, ../sass/styles.scss */
+  /* line 506, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .resume-category:before {
     content: "";
     position: absolute;
@@ -526,7 +527,7 @@ body {
     border-bottom: 12px solid transparent;
   }
 }
-/* line 529, ../sass/styles.scss */
+/* line 530, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .resume-category .resume-section {
   font-size: 300%;
   font-weight: 700;
@@ -534,12 +535,12 @@ body {
   color: #1f001f;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 529, ../sass/styles.scss */
+  /* line 530, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .resume-category .resume-section {
     font-size: 150%;
   }
 }
-/* line 542, ../sass/styles.scss */
+/* line 543, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image {
   padding: 20px;
   background: #edcced;
@@ -547,23 +548,23 @@ body {
   text-align: center;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 542, ../sass/styles.scss */
+  /* line 543, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image {
     float: left;
     width: 64%;
   }
 }
-/* line 554, ../sass/styles.scss */
+/* line 555, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image img {
   width: 100%;
   max-width: 610px;
   height: auto;
 }
-/* line 560, ../sass/styles.scss */
+/* line 561, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body {
   padding-bottom: 20px;
 }
-/* line 563, ../sass/styles.scss */
+/* line 564, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-date {
   float: right;
   color: #1f001f;
@@ -573,12 +574,12 @@ body {
   font-size: 150%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 563, ../sass/styles.scss */
+  /* line 564, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .resume-body .resume-date {
     font-size: 100%;
   }
 }
-/* line 576, ../sass/styles.scss */
+/* line 577, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-header {
   color: #441e9a;
   font-size: 200%;
@@ -587,12 +588,12 @@ body {
   text-align: left;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 576, ../sass/styles.scss */
+  /* line 577, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .resume-body .resume-header {
     font-size: 130%;
   }
 }
-/* line 588, ../sass/styles.scss */
+/* line 589, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-subheader {
   color: #960f90;
   font-size: 150%;
@@ -601,12 +602,12 @@ body {
   text-align: left;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 588, ../sass/styles.scss */
+  /* line 589, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .resume-body .resume-subheader {
     font-size: 110%;
   }
 }
-/* line 600, ../sass/styles.scss */
+/* line 601, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-description {
   color: #5e445e;
   text-align: left;
@@ -614,12 +615,12 @@ body {
   font-size: 150%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 600, ../sass/styles.scss */
+  /* line 601, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .resume-body .resume-description {
     font-size: 110%;
   }
 }
-/* line 611, ../sass/styles.scss */
+/* line 612, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list {
   list-style: inside;
   text-align: left;
@@ -628,33 +629,34 @@ body {
   font-size: 150%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 611, ../sass/styles.scss */
+  /* line 612, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .resume-body .resume-list {
     font-size: 110%;
   }
 }
-/* line 622, ../sass/styles.scss */
+/* line 623, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list li {
   list-style-type: disc;
 }
-/* line 630, ../sass/styles.scss */
+/* line 631, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .blog-body {
   padding-bottom: 20px;
 }
-/* line 633, ../sass/styles.scss */
+/* line 634, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .blog-body .blog-post {
   color: #5e445e;
   text-align: left;
   padding: 15px 0;
   font-size: 150%;
+  white-space: pre-wrap;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 633, ../sass/styles.scss */
+  /* line 634, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .blog-body .blog-post {
     font-size: 110%;
   }
 }
-/* line 645, ../sass/styles.scss */
+/* line 647, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .error {
   background-color: #960f90;
   color: #1f001f;
