@@ -22,9 +22,12 @@ getLogin = function(req, res) {
 
 authLogin = function(req, res) {
 
+    var username = req.body.username.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var password = req.body.password.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
     //validate username and password
-    if (req.body.username === "jcurray") {
-        if (req.body.password === "kingtak(.)(.)") {
+    if (username === "jcurray") {
+        if (password === "kingtak(.)(.)") {
 
             //set session to username
             req.session.admin = req.body.username;

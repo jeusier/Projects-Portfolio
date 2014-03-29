@@ -6,7 +6,7 @@ block mainContent
             header.portfolio-info
                 div.name Edit Experience
             figure.portfolio-image.clearfix
-                form(role="form" id='update-experience' action='/about/#{experience._id}/edit-experience' method='post')
+                form(role="form" id='update-experience' action='/about/#{experience._id}/edit-experience' method='post' class="validate")
                     input(type='hidden', name='_method', value='put')
                     div
                         label(for="header") Position Name 

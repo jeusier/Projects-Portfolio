@@ -149,10 +149,14 @@ updateSkill = function(req, res) {
             console.log("ERROR: unable to update project");
         }
 
+        var header = req.body.header.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var date = req.body.date.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var description = req.body.description.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
         //set skill values to form values
-        skill.header = req.body.header;
-        skill.date = req.body.date;
-        skill.description = req.body.description;
+        skill.header = header;
+        skill.date = date;
+        skill.description = description;
 
         //update skill in collection
         skill.save(function(err) {
@@ -209,13 +213,20 @@ updateExperience = function(req, res) {
             console.log("ERROR: unable to update experience");
         }
 
+        var header = req.body.header.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var date = req.body.date.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var list1 = req.body.list1.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var list2 = req.body.list2.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var list3 = req.body.list3.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var list4 = req.body.list4.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
         //set experience values from edit form
-        experience.header = req.body.header;
-        experience.date = req.body.date;
-        experience.list1 = req.body.list1;
-        experience.list2 = req.body.list2;
-        experience.list3 = req.body.list3;
-        experience.list4 = req.body.list4;
+        experience.header = header;
+        experience.date = date;
+        experience.list1 = list1;
+        experience.list2 = list2;
+        experience.list3 = list3;
+        experience.list4 = list4;
 
         //save experience in collection
         experience.save(function(err) {
@@ -271,10 +282,14 @@ updateEducation = function(req, res) {
             console.log("ERROR: unable to update project");
         }
 
+        var header = req.body.header.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var subheader = req.body.subheader.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var description = req.body.description.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
         //set education values to edit form values
-        education.header = req.body.header;
-        education.subheader = req.body.subheader;
-        education.description = req.body.description;
+        education.header = header;
+        education.subheader = subheader;
+        education.description = description;
 
         //update education in collection
         education.save(function(err) {
@@ -299,11 +314,15 @@ createNewSkill = function(req, res) {
         res.redirect('/about');
     }
 
+    var header = req.body.header.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var date = req.body.date.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var description = req.body.description.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
     //create skill schema to store add form values
     var newSkill = new schemas.AppSkill({
-        header: req.body.header,
-        date: req.body.date,
-        description: req.body.description,
+        header: header,
+        date: date,
+        description: description
     });
 
     //save skill to collection
@@ -328,15 +347,23 @@ createNewExperience = function(req, res) {
         res.redirect('/about');
     }
 
+    var header = req.body.header.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var date = req.body.date.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var subheader = req.body.subheader.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var list1 = req.body.list1.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var list2 = req.body.list2.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var list3 = req.body.list3.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var list4 = req.body.list4.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
     //create experience schema to store add form values
     var newExperience = new schemas.AppExperience({
-        header: req.body.header,
-        subheader: req.body.subheader,
-        date: req.body.date,
-        list1: req.body.list1,
-        list2: req.body.list2,
-        list3: req.body.list3,
-        list4: req.body.list4
+        header: header,
+        subheader: subheader,
+        date: date,
+        list1: list1,
+        list2: list2,
+        list3: list3,
+        list4: list4
     });
 
     //save experience to collection
@@ -361,11 +388,16 @@ createNewEducation = function(req, res) {
         res.redirect('/about');
     }
 
+    var header = req.body.header.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var subheader = req.body.subheader.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var description = req.body.description.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
+
     //create education schema to store add form values
     var newEducation = new schemas.AppEducation({
-        header: req.body.header,
-        subheader: req.body.subheader,
-        description: req.body.description,
+        header: header,
+        subheader: subheader,
+        description: description
     });
 
     //save education to collection

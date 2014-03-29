@@ -6,7 +6,7 @@ block mainContent
             header.portfolio-info
                 div.name Edit Education
             figure.portfolio-image.clearfix
-                form(role="form" id='update-education' action='/about/#{education._id}/edit-education' method='post')
+                form(role="form" id='update-education' action='/about/#{education._id}/edit-education' method='post' class="validate")
                     input(type='hidden', name='_method', value='put')
                     div
                         label(for="header") School Name 

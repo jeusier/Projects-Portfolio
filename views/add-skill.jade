@@ -6,7 +6,7 @@ block mainContent
             header.portfolio-info
                 div.name Add Skill
             figure.portfolio-image.clearfix
-                form(role="form" id='create-skill' action='/about/add-skill' method='post')
+                form(role="form" id='create-skill' action='/about/add-skill' method='post' class="validate")
                     div
                         label(for="header") Skill Name 
                         input(type="text" id="header" name="header" placeholder="Enter Skill Name" autofocus)

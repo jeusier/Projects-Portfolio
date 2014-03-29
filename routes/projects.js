@@ -106,11 +106,16 @@ updateProject = function(req, res) {
             console.log("ERROR: unable to update project");
         }
 
+        var name = req.body.name.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var url = req.body.url.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var imgURL = req.body.imgURL.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+        var description = req.body.description.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
         //set project values to the current edit form values
-        project.name = req.body.name;
-        project.url = req.body.url;
-        project.imgURL = req.body.imgURL;
-        project.description = req.body.description;
+        project.name = name;
+        project.url = url;
+        project.imgURL = imgURL;
+        project.description = description;
         project.type = req.body.type;
 
         //save values to project collection
@@ -158,12 +163,17 @@ createNewProject = function(req, res) {
         res.redirect('/projects');
     }
 
+    var name = req.body.name.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var url = req.body.url.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var imgURL = req.body.imgURL.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+    var description = req.body.description.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+
     //set add form values to new schema
     var newProject = new schemas.AppProject({
-        name: req.body.name,
-        url: req.body.url,
-        imgURL: req.body.imgURL,
-        description: req.body.description,
+        name: name,
+        url: url,
+        imgURL: imgURL,
+        description: description,
         type: req.body.type
     });
 

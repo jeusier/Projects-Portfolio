@@ -6,7 +6,7 @@ block mainContent
             header.portfolio-info
                 div.name Edit Project
             figure.portfolio-image.clearfix
-                form(role="form" id='update' action='/projects/#{project._id}/edit' method='post')
+                form(role="form" id='update' action='/projects/#{project._id}/edit' method='post' class="validate")
                     input(type='hidden', name='_method', value='put')
                     div
                         label(for="name") Name 

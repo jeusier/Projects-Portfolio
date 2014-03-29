@@ -21,6 +21,9 @@
             type: 'POST',
             data: $('#create').serialize(),
             success: function(data) {
+                var fixInput = $('#name').val();
+                fixInput = fixInput.replace('&','&amp').replace('"','&quot').replace("'",'&rsquo').replace("'",'&lsquo').replace("<",'&lt').replace(">",'&gt');
+                console.log(fixInput);
                 if (typeof data.redirect == 'string') {
                     window.location = data.redirect;
                 }
@@ -102,5 +105,6 @@
             }
         });
     });
+
 
 });

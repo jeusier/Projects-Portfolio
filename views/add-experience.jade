@@ -6,7 +6,7 @@ block mainContent
             header.portfolio-info
                 div.name Add Experience
             figure.portfolio-image.clearfix
-                form(role="form" id='create-experience' action='/about/add-experience' method='post')
+                form(role="form" id='create-experience' action='/about/add-experience' method='post' class="validate")
                     div
                         label(for="header") Position Name 
                         input(type="text" id="header" name="header" placeholder="Enter Position Name" autofocus)
