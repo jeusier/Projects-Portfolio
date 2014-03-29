@@ -12,13 +12,13 @@ $padding: 10px;
 $margin: 10px;
 
 $font-size: 14px;
-$font-family: 'Open Sans', sans-serif;
+$font-family: 'Lato', sans-serif;
 $line-height: 1.4;
 
 $large: 1000px;
 $small: 320px;
 
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,300,700');
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700');
 @import url('normalize.css');
 
 //Utilities
@@ -42,14 +42,14 @@ body,
 main {
     min-height: 100%;
     width: 100%;
+    font-family: $font-family !important;
 }
 
 body {
     color: $grey;
     font-size: $font-size;
-    font-family: $font-family;
     line-height: $line-height;
-    background: $darkpurple;
+    background-image: url(../images/notebook_3.png);
 }
 
 #create,
@@ -86,6 +86,7 @@ body {
         .name {
             font-size: 300%;
             padding-bottom: $padding;
+            font-weight: 700;
         }
 
         h2 {
@@ -167,7 +168,7 @@ body {
         h3 {
             text-transform: uppercase;
             font-size: 250%;
-            font-weight: normal;
+            font-weight: 700;
             cursor: pointer;
             margin: $margin*2 $margin*11 $margin;
 
@@ -185,7 +186,7 @@ body {
                 &:before {
                     content: "";
                     position: absolute;
-                    left: -177px;
+                    left: -180px;
                     top: 15px;
                     width: 0px;
                     height: 0px;
@@ -230,7 +231,7 @@ body {
                 &:before {
                     content: "";
                     position: absolute;
-                    left: -210px;
+                    left: -212px;
                     top: 15px;
                     width: 0px;
                     height: 0px;
@@ -387,7 +388,7 @@ body {
     }
 
     .portfolio-item {
-        background: $grey;
+        background-image: url(../images/notebook_2.png);
 
         &:before {
             content: "";
@@ -415,7 +416,8 @@ body {
 
             .name {
                 font-size: 300%;
-                color: $black;
+                font-weight: 700;
+                color: $darkpurple;
                 padding-bottom: $padding*2;
 
                 @media only screen and (min-width: $large) {
@@ -500,7 +502,7 @@ body {
             }
 
             .resume-category {
-                color: $black;
+                color: $darkpurple;
                 margin-bottom: $margin;
 
                 &:before {
@@ -530,7 +532,6 @@ body {
                 .resume-section {
                     font-size: 300%;
                     font-weight: 700;
-                    font-style: italic;
                     color: $darkpurple;
 
                     @media only screen and (min-width: $large) {
@@ -542,7 +543,7 @@ body {
 
         .portfolio-image {
             padding: $padding*2;
-            background: $white;
+            background-image: url(../images/notebook.png);
             border-left: 1px solid darken($grey, 10%);
             text-align: center;
 
@@ -567,7 +568,7 @@ body {
                     text-transform: uppercase;
                     margin: 0 0 $margin;
                     line-height: $line-height;
-                    font-size: 150%;
+                    font-size: 130%;
 
                     @media only screen and (min-width: $large) {
                         font-size: 100%;
@@ -576,7 +577,7 @@ body {
 
                 .resume-header {
                     color: $purple;
-                    font-size: 200%;
+                    font-size: 170%;
                     font-weight: 400;
                     letter-spacing: -1px;
                     text-align: left;
@@ -588,7 +589,7 @@ body {
 
                 .resume-subheader {
                     color: $pink;
-                    font-size: 150%;
+                    font-size: 120%;
                     font-weight: 400;
                     font-style: italic;
                     text-align: left;
