@@ -1,5 +1,6 @@
 var express = require('express');
 var app = module.exports = express();
+var sha1 = require('sha1');
 var mongoose = require('mongoose');
 var schemas = require('../models/schemas');
 
@@ -8,7 +9,6 @@ var schemas = require('../models/schemas');
 */
 
 getLogin = function(req, res) {
-
     //display login page
     res.render('login', {
         pageTitle: 'Jason Piros - Login',
@@ -27,7 +27,7 @@ authLogin = function(req, res) {
 
     //validate username and password
     if (username === "jcurray") {
-        if (password === "kingtak(.)(.)") {
+        if (sha1(password) === "00b3d2e1e391d4252570abae324be47c5326adac") {
 
             //set session to username
             req.session.admin = req.body.username;
