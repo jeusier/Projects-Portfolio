@@ -475,10 +475,10 @@ body {
 
             .description {
                 text-align: left;
-                font-size: 180%;
+                font-size: 120%;
 
                 @media only screen and (min-width: $large) {
-                    font-size: 110%;
+                    font-size: 100%;
                 }
             }
 
@@ -604,6 +604,7 @@ body {
                     text-align: left;
                     padding: $padding*1.5 0;
                     font-size: 150%;
+                    white-space: pre-wrap;
 
                     @media only screen and (min-width: $large) {
                         font-size: 110%;

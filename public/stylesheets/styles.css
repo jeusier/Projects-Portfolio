@@ -469,12 +469,12 @@ body {
 /* line 476, ../sass/styles.scss */
 .content .portfolio-item .portfolio-info .description {
   text-align: left;
-  font-size: 180%;
+  font-size: 120%;
 }
 @media only screen and (min-width: 1000px) {
   /* line 476, ../sass/styles.scss */
   .content .portfolio-item .portfolio-info .description {
-    font-size: 110%;
+    font-size: 100%;
   }
 }
 /* line 485, ../sass/styles.scss */
@@ -614,6 +614,7 @@ body {
   text-align: left;
   padding: 15px 0;
   font-size: 150%;
+  white-space: pre-wrap;
 }
 @media only screen and (min-width: 1000px) {
   /* line 602, ../sass/styles.scss */
@@ -621,7 +622,7 @@ body {
     font-size: 110%;
   }
 }
-/* line 613, ../sass/styles.scss */
+/* line 614, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list {
   list-style: inside;
   text-align: left;
@@ -630,20 +631,20 @@ body {
   font-size: 150%;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 613, ../sass/styles.scss */
+  /* line 614, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .resume-body .resume-list {
     font-size: 110%;
   }
 }
-/* line 624, ../sass/styles.scss */
+/* line 625, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .resume-body .resume-list li {
   list-style-type: disc;
 }
-/* line 632, ../sass/styles.scss */
+/* line 633, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .blog-body {
   padding-bottom: 20px;
 }
-/* line 635, ../sass/styles.scss */
+/* line 636, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .blog-body .blog-post {
   color: #5e445e;
   text-align: left;
@@ -652,12 +653,12 @@ body {
   white-space: pre-wrap;
 }
 @media only screen and (min-width: 1000px) {
-  /* line 635, ../sass/styles.scss */
+  /* line 636, ../sass/styles.scss */
   .content .portfolio-item .portfolio-image .blog-body .blog-post {
     font-size: 110%;
   }
 }
-/* line 648, ../sass/styles.scss */
+/* line 649, ../sass/styles.scss */
 .content .portfolio-item .portfolio-image .error {
   background-color: #960f90;
   color: #1f001f;

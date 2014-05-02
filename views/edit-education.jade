@@ -15,7 +15,7 @@ block mainContent
                         label(for="subheader") Degree or School Type 
                         input(type="text" id="subheader" name="subheader" value="#{education.subheader}")
                     div
-                        label(for="description") Description 
+                        label(for="description") Courses 
                         textarea(name="description" id="description" rows=15 value="#{education.description}")= education.description
                     button(type="submit") Update Education
                 form(role="form" id='delete-education' action='/about/#{education._id}/education' method='post')

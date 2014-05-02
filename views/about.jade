@@ -16,7 +16,7 @@ block mainContent
                         else
                             h1.resume-header= skill.header
                         h2.resume-subheader
-                        p.resume-description= skill.description
+                        pre.resume-description= skill.description
             header.portfolio-info
                 div.resume-category
                     h1.resume-section#experience Experience
@@ -34,7 +34,6 @@ block mainContent
                             li= experience.list1
                             li= experience.list2
                             li= experience.list3
-                            li= experience.list4
             header.portfolio-info
                 div.resume-category
                     h1.resume-section#education Education
@@ -48,4 +47,4 @@ block mainContent
                         else
                             h1.resume-header= education.header
                         h2.resume-subheader= education.subheader
-                        p.resume-description= education.description
+                        pre.resume-description= education.description
